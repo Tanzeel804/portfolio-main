@@ -46,8 +46,337 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Additional CSS for About page enhancements */
+      .page-title {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .typewriter-container {
+        display: inline-block;
+        position: relative;
+      }
+
+      .typewriter-text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 0.15em solid white;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.15em;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: white;
+        }
+      }
+
+      /* Enhanced Bio Content */
+      .bio-content {
+        background: var(--gradient-card);
+        padding: 3rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 15px 40px var(--shadow);
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bio-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 107, 107, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .bio-content:hover::before {
+        left: 100%;
+      }
+
+      /* Enhanced Education Cards */
+      .education-card {
+        background: var(--gradient-card);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 30px var(--shadow);
+        text-align: center;
+        border: 1px solid var(--border);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .education-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 107, 107, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .education-card:hover::before {
+        left: 100%;
+      }
+
+      .education-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px var(--shadow);
+        border-color: var(--accent);
+      }
+
+      .university-logo img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .education-card:hover .university-logo img {
+        transform: scale(1.05);
+      }
+
+      /* Enhanced Timeline */
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover {
+        transform: translateX(10px);
+      }
+
+      .timeline-date {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover .timeline-date {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      }
+
+      .timeline-content {
+        background: var(--gradient-card);
+        padding: 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 25px var(--shadow);
+        position: relative;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px var(--shadow);
+      }
+
+      /* Enhanced Vision Sections */
+      .vision-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--gradient-card);
+        border-radius: 1.5rem;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vision-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 107, 107, 0.05),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .vision-section:hover::before {
+        left: 100%;
+      }
+
+      .vision-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px var(--shadow);
+      }
+
+      /* Floating Animation for Icons */
+      .floating-icon {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translate(0, 0px);
+        }
+        50% {
+          transform: translate(0, -10px);
+        }
+        100% {
+          transform: translate(0, 0px);
+        }
+      }
+
+      /* Enhanced Skill Categories */
+      .skill-category {
+        background: var(--gradient-card);
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 30px var(--shadow);
+        text-align: center;
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skill-category::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 107, 107, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .skill-category:hover::before {
+        left: 100%;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px var(--shadow);
+        border-color: var(--accent);
+      }
+
+      .skill-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+      }
+
+      .skill-category:hover .skill-icon {
+        transform: scale(1.2) rotate(5deg);
+      }
+
+      /* Progress Bar Animations */
+      .progress-bar {
+        animation: progressFill 1.5s ease-out forwards;
+      }
+
+      @keyframes progressFill {
+        from {
+          width: 0%;
+        }
+      }
+
+      /* Enhanced Section Titles */
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .bio-content,
+        .education-card,
+        .vision-section,
+        .skill-category {
+          padding: 1.5rem;
+        }
+
+        .page-title {
+          font-size: 2.5rem;
+        }
+
+        .typewriter-text {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -90,10 +419,24 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h1 class="page-title" data-aos="fade-up">About Me</h1>
+            <h1 class="page-title" data-aos="fade-up">
+              <span class="typewriter-container">
+                <span class="typewriter-text">About Me</span>
+              </span>
+            </h1>
             <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
               My Journey in Software Engineering
             </p>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              class="mt-4 floating-icon"
+            >
+              <i
+                class="fas fa-user-graduate text-white"
+                style="font-size: 3rem"
+              ></i>
+            </div>
           </div>
         </div>
       </div>
@@ -106,7 +449,7 @@
           <div class="col-lg-10 mx-auto">
             <div class="bio-content" data-aos="fade-up">
               <h2 class="section-title">Professional Journey</h2>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="100">
                 My journey into software engineering began with a deep
                 fascination for how technology transforms our daily lives. As a
                 Software Engineering student at The Islamia University of
@@ -114,7 +457,7 @@
                 science principles while cultivating practical skills in modern
                 web development.
               </p>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="150">
                 What excites me most about software engineering is the endless
                 potential for innovation. Every line of code represents an
                 opportunity to solve problems, create value, and make a positive
@@ -122,7 +465,7 @@
                 concepts and practical applications that drive technological
                 advancement.
               </p>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="200">
                 Throughout my academic journey, I've embraced challenges that
                 push my boundaries. From mastering complex algorithms to
                 building responsive web applications, each experience has
@@ -131,7 +474,7 @@
                 software isn't just about functionality—it's about creating
                 intuitive, accessible experiences that empower users.
               </p>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="250">
                 Beyond technical skills, I've developed a growth mindset that
                 drives continuous learning. The technology landscape evolves
                 rapidly, and staying current requires curiosity, adaptability,
@@ -151,7 +494,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
             <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
               Academic Foundation for Technological Excellence
             </p>
           </div>
@@ -183,21 +526,21 @@
           <div class="col-lg-6" data-aos="fade-left">
             <div class="why-iub">
               <h4>Why I Chose IUB</h4>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="100">
                 I selected The Islamia University of Bahawalpur for its strong
                 reputation in computer science and software engineering
                 education. The university's commitment to providing
                 industry-relevant curriculum and fostering innovation aligns
                 perfectly with my academic and career aspirations.
               </p>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="150">
                 The Software Engineering program at IUB offers a comprehensive
                 approach that balances theoretical knowledge with practical
                 application. The supportive learning environment and experienced
                 faculty have been instrumental in developing my technical
                 expertise and problem-solving capabilities.
               </p>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="200">
                 IUB's focus on emerging technologies and hands-on projects has
                 prepared me to tackle real-world challenges in software
                 development. The university's emphasis on research and
@@ -209,13 +552,14 @@
         </div>
       </div>
     </section>
+
     <!-- Academic Milestones -->
     <section class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
             <h2 class="section-title">Academic Milestones</h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
               Key Moments in My Educational Journey
             </p>
           </div>
@@ -223,7 +567,7 @@
         <div class="row mt-5">
           <div class="col-lg-10 mx-auto">
             <div class="timeline" data-aos="fade-up">
-              <div class="timeline-item">
+              <div class="timeline-item" data-aos="fade-right">
                 <div class="timeline-date">2025 - Present</div>
                 <div class="timeline-content">
                   <h4>Started BSc Software Engineering</h4>
@@ -234,7 +578,11 @@
                   </p>
                 </div>
               </div>
-              <div class="timeline-item">
+              <div
+                class="timeline-item"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <div class="timeline-date">2024 - Present</div>
                 <div class="timeline-content">
                   <h4>Programming Fundamentals</h4>
@@ -245,7 +593,11 @@
                   </p>
                 </div>
               </div>
-              <div class="timeline-item">
+              <div
+                class="timeline-item"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <div class="timeline-date">2022 - 2025</div>
                 <div class="timeline-content">
                   <h4>Self-Taught Web Development</h4>
@@ -261,13 +613,14 @@
         </div>
       </div>
     </section>
+
     <!-- Skills & Expertise -->
     <section class="section-padding bg-secondary">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
             <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
               Continuously expanding my technical capabilities
             </p>
           </div>
@@ -275,7 +628,7 @@
         <div class="row mt-5">
           <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
             <div class="skill-category">
-              <div class="skill-icon">
+              <div class="skill-icon floating-icon">
                 <i class="fas fa-code"></i>
               </div>
               <h4>Frontend Development</h4>
@@ -294,7 +647,7 @@
             data-aos-delay="100"
           >
             <div class="skill-category">
-              <div class="skill-icon">
+              <div class="skill-icon floating-icon">
                 <i class="fas fa-laptop-code"></i>
               </div>
               <h4>Programming</h4>
@@ -313,7 +666,7 @@
             data-aos-delay="200"
           >
             <div class="skill-category">
-              <div class="skill-icon">
+              <div class="skill-icon floating-icon">
                 <i class="fas fa-tools"></i>
               </div>
               <h4>Development Tools</h4>
@@ -332,7 +685,7 @@
             data-aos-delay="300"
           >
             <div class="skill-category">
-              <div class="skill-icon">
+              <div class="skill-icon floating-icon">
                 <i class="fas fa-brain"></i>
               </div>
               <h4>Technical Concepts</h4>
@@ -357,7 +710,11 @@
             <div class="future-vision" data-aos="fade-up">
               <h2 class="section-title">Future Vision & Career Goals</h2>
 
-              <div class="vision-section">
+              <div
+                class="vision-section"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <h3>Emerging Technologies Interest</h3>
                 <p>
                   I'm particularly fascinated by the rapid advancements in
@@ -385,7 +742,11 @@
                 </p>
               </div>
 
-              <div class="vision-section">
+              <div
+                class="vision-section"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              >
                 <h3>Career Aspirations</h3>
                 <p>
                   My primary career goal is to become an expert full-stack
@@ -418,7 +779,11 @@
                 </p>
               </div>
 
-              <div class="vision-section">
+              <div
+                class="vision-section"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <h3>Contribution to Pakistan & Society</h3>
                 <p>
                   As a Pakistani software engineer, I'm committed to
@@ -454,6 +819,7 @@
         </div>
       </div>
     </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -595,5 +961,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      // Additional JavaScript for enhanced animations
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+          offset: 100,
+        });
+
+        // Add scroll progress indicator
+        window.addEventListener("scroll", function () {
+          const winHeight = window.innerHeight;
+          const docHeight = document.documentElement.scrollHeight;
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+          const scrollProgress = document.getElementById("scrollProgress");
+          if (scrollProgress) {
+            scrollProgress.style.width = scrollPercent + "%";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
