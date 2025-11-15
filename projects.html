@@ -80,6 +80,209 @@
         }
       }
 
+      /* Enhanced Technology Stack Section */
+      .tech-stack-section {
+        background: linear-gradient(
+          135deg,
+          var(--bg-secondary),
+          var(--bg-card)
+        );
+        border-radius: 1.5rem;
+        padding: 3rem 2rem;
+        border: 2px solid var(--border);
+        margin: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tech-stack-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.1) 0%,
+          transparent 70%
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .tech-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        background: var(--bg-primary);
+        border-radius: 1rem;
+        border: 2px solid transparent;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        min-height: 120px;
+      }
+
+      .tech-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.2),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .tech-item:hover::before {
+        left: 100%;
+      }
+
+      .tech-item:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+        border-color: var(--accent);
+        background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      }
+
+      .tech-item:hover .tech-icon {
+        transform: scale(1.2) rotate(8deg);
+        color: white;
+      }
+
+      .tech-item:hover .tech-name {
+        color: white;
+        transform: translateY(3px);
+      }
+
+      .tech-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: var(--accent);
+      }
+
+      .tech-name {
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        color: var(--text-primary);
+        font-size: 0.9rem;
+        line-height: 1.2;
+      }
+      /* Skills Progress Section */
+      .skills-progress-section {
+        background: linear-gradient(
+          135deg,
+          var(--bg-card),
+          var(--bg-secondary)
+        );
+        border-radius: 1.5rem;
+        padding: 3rem 2rem;
+        margin: 2rem 0;
+        border: 2px solid var(--border);
+      }
+
+      .skill-progress-item {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: var(--bg-primary);
+        border-radius: 1rem;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .skill-progress-item:hover {
+        border-color: var(--accent);
+        transform: translateX(10px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+      }
+
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .skill-name {
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .skill-percentage {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 1.1rem;
+      }
+
+      .progress {
+        height: 12px;
+        background: var(--bg-secondary);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .progress-bar {
+        height: 100%;
+        border-radius: 10px;
+        transition: width 1.5s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: shine 2s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
       /* Enhanced Project Card Styles */
       .project-card {
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -119,52 +322,6 @@
           var(--bg-card),
           var(--bg-secondary)
         );
-      }
-
-      /* Enhanced Tech Badges */
-      .tech-badge {
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid transparent;
-      }
-
-      .tech-badge::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .tech-badge:hover::before {
-        left: 100%;
-      }
-
-      .tech-badge:hover {
-        transform: translateY(-3px) scale(1.1);
-        background: linear-gradient(
-          135deg,
-          var(--accent),
-          var(--accent-hover)
-        ) !important;
-        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        border-color: var(--accent-light);
-        color: white !important;
-      }
-
-      .tech-badge:active {
-        transform: translateY(0) scale(1.05);
-        transition: all 0.1s ease;
       }
 
       /* Enhanced Enhancement Items */
@@ -257,16 +414,6 @@
         border-color: var(--accent-light);
       }
 
-      /* Skill Progress Animation */
-      .skill-progress {
-        transition: all 0.8s ease-in-out;
-      }
-
-      .skill-progress:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-      }
-
       /* Feature List Enhancements */
       .feature-list li {
         transition: all 0.3s ease;
@@ -287,23 +434,6 @@
 
       .feature-list i {
         transition: all 0.3s ease;
-      }
-
-      /* Technology Stack Section Enhancement */
-      .tech-stack-section {
-        background: linear-gradient(
-          135deg,
-          var(--bg-secondary),
-          var(--bg-card)
-        );
-        border-radius: 1rem;
-        padding: 2rem;
-        border: 1px solid var(--border);
-      }
-
-      .tech-stack-section:hover {
-        border-color: var(--accent);
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
       }
     </style>
   </head>
@@ -416,145 +546,162 @@
                   implementing secure user authentication, and optimizing
                   performance for better user experience and conversion rates.
                 </p>
+              </div>
+            </div>
+          </div>
 
-                <div class="project-tech mt-4 tech-stack-section">
-                  <h4>Technology Stack</h4>
-                  <div class="tech-tags mt-3">
-                    <span
-                      class="tech-badge"
-                      style="background: #e34f26; color: white"
-                      >HTML5</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #1572b6; color: white"
-                      >CSS3</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #f7df1e; color: black"
-                      >JavaScript</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #7952b3; color: white"
-                      >Bootstrap 5</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #3776ab; color: white"
-                      >Python</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #ff6b35; color: white"
-                      >Prompt Engineering</span
-                    >
-                    <span
-                      class="tech-badge"
-                      style="background: #f05032; color: white"
-                      >Git</span
-                    >
+          <!-- Technology Stack Section -->
+          <div class="tech-stack-section" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h3 class="mb-4">Technology Stack & Skills</h3>
+                <p class="text-muted mb-5">
+                  Technologies and skills utilized in this project
+                </p>
+              </div>
+            </div>
+
+            <div class="tech-stack-grid">
+              <div class="tech-item">
+                <i class="fab fa-html5 tech-icon" style="color: #e34f26"></i>
+                <span class="tech-name">HTML5</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-css3-alt tech-icon" style="color: #1572b6"></i>
+                <span class="tech-name">CSS3</span>
+              </div>
+              <div class="tech-item">
+                <i
+                  class="fab fa-js-square tech-icon"
+                  style="color: #f7df1e"
+                ></i>
+                <span class="tech-name">JavaScript</span>
+              </div>
+              <div class="tech-item">
+                <i
+                  class="fab fa-bootstrap tech-icon"
+                  style="color: #7952b3"
+                ></i>
+                <span class="tech-name">Bootstrap</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-python tech-icon" style="color: #3776ab"></i>
+                <span class="tech-name">Python</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-robot tech-icon" style="color: #ff6b35"></i>
+                <span class="tech-name">AI Prompt Engineering</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-git-alt tech-icon" style="color: #f05032"></i>
+                <span class="tech-name">Git</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-code tech-icon" style="color: #3b82f6"></i>
+                <span class="tech-name">Frontend Development</span>
+              </div>
+              <!-- New Added Skills -->
+              <div class="tech-item">
+                <i
+                  class="fas fa-mobile-alt tech-icon"
+                  style="color: #8b5cf6"
+                ></i>
+                <span class="tech-name">Responsive Design</span>
+              </div>
+              <div class="tech-item">
+                <i
+                  class="fas fa-paint-brush tech-icon"
+                  style="color: #06b6d4"
+                ></i>
+                <span class="tech-name">UI/UX Design</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-brain tech-icon" style="color: #10b981"></i>
+                <span class="tech-name">Problem Solving</span>
+              </div>
+              <div class="tech-item">
+                <i
+                  class="fas fa-project-diagram tech-icon"
+                  style="color: #f59e0b"
+                ></i>
+                <span class="tech-name">API Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Progress Section -->
+          <div class="skills-progress-section" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h3 class="mb-4">Key Skills Demonstrated</h3>
+                <p class="text-muted mb-5">
+                  Core competencies developed through this project
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="skill-progress-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Frontend Development</span>
+                    <span class="skill-percentage">90%</span>
                   </div>
-                  <div class="skills-showcase mt-4">
-                    <h5>Key Skills Demonstrated:</h5>
-                    <div class="row mt-3">
-                      <div class="col-md-6">
-                        <div class="skill-item">
-                          <div class="skill-header">
-                            <span class="skill-name">Frontend Development</span>
-                            <span class="skill-percentage">90%</span>
-                          </div>
-                          <div
-                            class="progress skill-progress"
-                            style="height: 8px"
-                          >
-                            <div
-                              class="progress-bar"
-                              data-width="90"
-                              style="
-                                width: 0%;
-                                background: linear-gradient(
-                                  90deg,
-                                  #3b82f6,
-                                  #60a5fa
-                                );
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-item mt-3">
-                          <div class="skill-header">
-                            <span class="skill-name">UI/UX Design</span>
-                            <span class="skill-percentage">85%</span>
-                          </div>
-                          <div
-                            class="progress skill-progress"
-                            style="height: 8px"
-                          >
-                            <div
-                              class="progress-bar"
-                              data-width="85"
-                              style="
-                                width: 0%;
-                                background: linear-gradient(
-                                  90deg,
-                                  #10b981,
-                                  #34d399
-                                );
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="skill-item">
-                          <div class="skill-header">
-                            <span class="skill-name">Problem Solving</span>
-                            <span class="skill-percentage">88%</span>
-                          </div>
-                          <div
-                            class="progress skill-progress"
-                            style="height: 8px"
-                          >
-                            <div
-                              class="progress-bar"
-                              data-width="88"
-                              style="
-                                width: 0%;
-                                background: linear-gradient(
-                                  90deg,
-                                  #f59e0b,
-                                  #fbbf24
-                                );
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-item mt-3">
-                          <div class="skill-header">
-                            <span class="skill-name">API Integration</span>
-                            <span class="skill-percentage">82%</span>
-                          </div>
-                          <div
-                            class="progress skill-progress"
-                            style="width: 0%; height: 8px"
-                          >
-                            <div
-                              class="progress-bar"
-                              data-width="82"
-                              style="
-                                background: linear-gradient(
-                                  90deg,
-                                  #ef4444,
-                                  #f87171
-                                );
-                              "
-                            ></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      data-width="90"
+                      style="
+                        background: linear-gradient(90deg, #3b82f6, #60a5fa);
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-progress-item">
+                  <div class="skill-header">
+                    <span class="skill-name">UI/UX Design</span>
+                    <span class="skill-percentage">85%</span>
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      data-width="85"
+                      style="
+                        background: linear-gradient(90deg, #10b981, #34d399);
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="skill-progress-item">
+                  <div class="skill-header">
+                    <span class="skill-name">Problem Solving</span>
+                    <span class="skill-percentage">88%</span>
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      data-width="88"
+                      style="
+                        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div class="skill-progress-item">
+                  <div class="skill-header">
+                    <span class="skill-name">API Integration</span>
+                    <span class="skill-percentage">82%</span>
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      data-width="82"
+                      style="
+                        background: linear-gradient(90deg, #ef4444, #f87171);
+                      "
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -1105,23 +1252,23 @@
           }, 500);
         });
 
-        // Enhanced tech badge effects
-        const techBadges = document.querySelectorAll(".tech-badge");
-        techBadges.forEach((badge) => {
-          badge.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-3px) scale(1.1)";
-            this.style.boxShadow = "0 8px 20px rgba(59, 130, 246, 0.4)";
+        // Tech item enhanced effects
+        const techItems = document.querySelectorAll(".tech-item");
+        techItems.forEach((item) => {
+          const icon = item.querySelector(".tech-icon");
+
+          item.addEventListener("mouseenter", function () {
+            icon.style.transform = "scale(1.3) rotate(10deg)";
           });
 
-          badge.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0) scale(1)";
-            this.style.boxShadow = "none";
+          item.addEventListener("mouseleave", function () {
+            icon.style.transform = "scale(1) rotate(0)";
           });
 
-          badge.addEventListener("click", function () {
+          item.addEventListener("click", function () {
             this.style.transform = "scale(0.95)";
             setTimeout(() => {
-              this.style.transform = "scale(1.1)";
+              this.style.transform = "translateY(-8px) scale(1.05)";
             }, 150);
           });
         });
