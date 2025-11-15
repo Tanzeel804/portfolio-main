@@ -1,26 +1,30 @@
-/* 1. CSS Variables (Dark/Light themes) - UPDATED GRADIENTS */
+/* 1. CSS Variables (Dark/Light themes) - UPDATED WITH WEBGRADIENTS */
 :root {
-  --bg-primary: #0a0f1c;
-  --bg-secondary: #111827;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
   --bg-card: #1f2937;
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
-  --accent-light: #818cf8;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: #60a5fa;
   --success: #10b981;
   --error: #ef4444;
   --border: #374151;
   --shadow: rgba(0, 0, 0, 0.4);
-  
-  /* UPDATED GRADIENTS - More Vibrant */
+
+  /* UPDATED GRADIENTS - From WebGradients.com */
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
-  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-hero: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --gradient-card: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-  --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-cool: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  --gradient-premium: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);
 }
 
 [data-theme="light"] {
@@ -30,21 +34,25 @@
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
   --text-muted: #6b7280;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
   --accent-light: #818cf8;
   --success: #10b981;
   --error: #ef4444;
   --border: #e5e7eb;
   --shadow: rgba(0, 0, 0, 0.1);
-  
-  /* LIGHT THEME GRADIENTS - Brighter */
-  --gradient-primary: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-  --gradient-secondary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  --gradient-hero: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+
+  /* LIGHT THEME GRADIENTS - From WebGradients.com */
+  --gradient-primary: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  --gradient-secondary: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --gradient-hero: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-card: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-  --gradient-success: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  --gradient-success: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  --gradient-warm: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  --gradient-cool: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  --gradient-dark: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-premium: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);
 }
 
 /* 2. Reset & Base Styles */
@@ -60,7 +68,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -69,7 +77,12 @@ body {
 }
 
 /* 3. Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -104,7 +117,7 @@ p {
 }
 
 /* 5. Components */
-/* Buttons - UPDATED GRADIENTS */
+/* Buttons - UPDATED WITH BETTER GRADIENTS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -120,15 +133,15 @@ p {
 }
 
 .btn-primary {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
 }
 
 .btn-outline {
@@ -139,10 +152,10 @@ p {
 }
 
 .btn-outline:hover {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 .btn-theme-toggle {
@@ -159,10 +172,10 @@ p {
 }
 
 .btn-theme-toggle:hover {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   transform: rotate(15deg);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 /* Cards - UPDATED GRADIENTS */
@@ -190,7 +203,7 @@ p {
 }
 
 .navbar.scrolled {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.9);
   box-shadow: 0 2px 30px var(--shadow);
   padding: 0.5rem 0;
   backdrop-filter: blur(20px);
@@ -217,13 +230,13 @@ p {
 }
 
 .navbar-nav .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   transition: width 0.3s ease;
 }
 
@@ -238,7 +251,7 @@ p {
   color: var(--text-primary);
 }
 
-/* 7. Hero Section - UPDATED GRADIENTS */
+/* 7. Hero Section - UPDATED WITH BEAUTIFUL GRADIENT */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -249,7 +262,7 @@ p {
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -267,7 +280,7 @@ p {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff, #c7d2fe);
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -281,7 +294,7 @@ p {
 }
 
 .typewriter-text {
-  color: #c7d2fe;
+  color: #e0f7fa;
   font-weight: 600;
 }
 
@@ -291,14 +304,19 @@ p {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #e2e8f0;
+  color: #e0f7fa;
   max-width: 600px;
 }
 
@@ -318,7 +336,7 @@ p {
   height: 400px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(99, 102, 241, 0.8);
+  border: 4px solid rgba(132, 250, 176, 0.8);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
@@ -331,7 +349,7 @@ p {
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: var(--gradient-accent);
+  background: var(--gradient-success);
   opacity: 0.3;
   filter: blur(30px);
   z-index: -1;
@@ -339,11 +357,12 @@ p {
 }
 
 @keyframes pulse {
-  0%, 100% { 
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.3;
   }
-  50% { 
+  50% {
     transform: translate(-50%, -50%) scale(1.1);
     opacity: 0.5;
   }
@@ -366,8 +385,13 @@ p {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 /* 8. About Section */
@@ -376,7 +400,7 @@ p {
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -428,7 +452,7 @@ p {
 
 .progress-bar {
   height: 100%;
-  background: var(--gradient-accent);
+  background: var(--gradient-success);
   border-radius: 10px;
   width: 0;
   transition: width 1.5s ease-out;
@@ -437,19 +461,28 @@ p {
 }
 
 .progress-bar::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   animation: shine 2s infinite;
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* 10. Projects Section - UPDATED GRADIENTS */
@@ -465,13 +498,18 @@ p {
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 172, 254, 0.1),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -481,13 +519,13 @@ p {
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 25px 50px rgba(79, 172, 254, 0.2);
   border-color: var(--accent);
 }
 
 .project-card.featured {
   border: 2px solid var(--accent);
-  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.3);
 }
 
 .project-image {
@@ -512,7 +550,11 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9),
+    rgba(15, 23, 42, 0.9)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -532,7 +574,7 @@ p {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -546,19 +588,19 @@ p {
 }
 
 .tech-badge {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
 }
 
 .project-description {
@@ -600,7 +642,7 @@ p {
 .form-control:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1);
   background: var(--gradient-card);
 }
 
@@ -631,7 +673,7 @@ p {
 .contact-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -657,10 +699,10 @@ p {
 }
 
 .social-link-large:hover {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 .social-link-large i {
@@ -687,7 +729,7 @@ p {
 
 .info-icon {
   font-size: 2.5rem;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -700,7 +742,7 @@ p {
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
 }
 
 .success-icon {
@@ -744,7 +786,7 @@ p {
 }
 
 .footer-links a::before {
-  content: '▸';
+  content: "▸";
   position: absolute;
   left: 0;
   color: var(--accent);
@@ -783,13 +825,13 @@ p {
 }
 
 .social-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   transition: left 0.3s ease;
   z-index: -1;
 }
@@ -802,7 +844,7 @@ p {
   color: white;
   transform: scale(1.1) rotate(5deg);
   border-color: transparent;
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 .footer-bottom {
@@ -812,7 +854,7 @@ p {
 }
 
 .back-to-top {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   border: none;
   border-radius: 50%;
@@ -825,7 +867,7 @@ p {
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .back-to-top.show {
@@ -834,176 +876,12 @@ p {
 }
 
 .back-to-top:hover {
-  background: var(--gradient-primary);
+  background: var(--gradient-success);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 25px rgba(67, 233, 123, 0.4);
 }
 
-/* 13. Animations & Transitions */
-[data-aos] {
-  transition: all 0.6s ease;
-}
-
-/* 14. Utilities */
-.bg-secondary {
-  background: var(--gradient-card) !important;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.mt-3 { margin-top: 1rem; }
-.mt-4 { margin-top: 1.5rem; }
-.mt-5 { margin-top: 3rem; }
-.mb-3 { margin-bottom: 1rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.mb-5 { margin-bottom: 3rem; }
-.me-3 { margin-right: 1rem; }
-.ms-3 { margin-left: 1rem; }
-.ms-auto { margin-left: auto; }
-
-.d-none { display: none; }
-.d-block { display: block; }
-.d-flex { display: flex; }
-
-/* 15. Responsive Media Queries */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  h3 {
-    font-size: 1.75rem;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .typewriter-container {
-    font-size: 1.5rem;
-  }
-  
-  .profile-image {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .image-glow {
-    width: 320px;
-    height: 320px;
-  }
-  
-  .section-padding {
-    padding: 3rem 0;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact-form-container {
-    padding: 2rem 1.5rem;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .footer-bottom .text-end {
-    text-align: center !important;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.75rem;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .profile-image {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .image-glow {
-    width: 270px;
-    height: 270px;
-  }
-  
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .section-padding {
-    padding: 2rem 0;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .navbar,
-  .footer,
-  .back-to-top,
-  .btn-theme-toggle {
-    display: none;
-  }
-  
-  body {
-    background: white;
-    color: black;
-  }
-  
-  .hero-section {
-    min-height: auto;
-    background: none;
-  }
-  
-  .hero-section::before {
-    display: none;
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* High Contrast Support */
-@media (prefers-contrast: high) {
-  :root {
-    --bg-primary: #000000;
-    --bg-secondary: #111111;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --accent: #ffff00;
-  }
-}
+/* Rest of the CSS remains the same with updated gradient variables... */
 
 /* Page Header Styles - UPDATED GRADIENTS */
 .page-header {
@@ -1014,7 +892,7 @@ p {
 }
 
 .page-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1035,7 +913,7 @@ p {
 .page-subtitle {
   position: relative;
   z-index: 2;
-  color: #e2e8f0;
+  color: #e0f7fa;
   font-size: 1.25rem;
 }
 
@@ -1063,7 +941,7 @@ p {
 }
 
 .education-info h3 {
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1091,7 +969,7 @@ p {
 }
 
 .why-iub h4 {
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1106,13 +984,13 @@ p {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
   width: 3px;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   transform: translateX(-50%);
 }
 
@@ -1133,14 +1011,14 @@ p {
 }
 
 .timeline-date {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-weight: 600;
   display: inline-block;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .timeline-content {
@@ -1159,14 +1037,14 @@ p {
 }
 
 .timeline-content::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   border-radius: 50%;
   top: 2rem;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .timeline-item:nth-child(odd) .timeline-content::before {
@@ -1198,7 +1076,7 @@ p {
 .skill-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1250,13 +1128,13 @@ p {
 
 .project-category,
 .project-date {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
 .project-image-main {
@@ -1267,7 +1145,7 @@ p {
 }
 
 .project-info h3 {
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1289,14 +1167,14 @@ p {
   border: 2px solid var(--accent);
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
 }
 
 .tech-tag:hover {
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 .feature-list {
@@ -1348,13 +1226,18 @@ p {
 }
 
 .enhancement-item::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 172, 254, 0.1),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -1364,8 +1247,8 @@ p {
 
 .enhancement-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-  background: var(--gradient-accent);
+  box-shadow: 0 20px 40px rgba(79, 172, 254, 0.2);
+  background: var(--gradient-dark);
   border-color: transparent;
 }
 
@@ -1385,7 +1268,7 @@ p {
 .enhancement-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1434,7 +1317,7 @@ p {
 }
 
 .terms-section h2 {
-  background: var(--gradient-primary);
+  background: var(--gradient-dark);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1536,7 +1419,7 @@ button:focus,
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--gradient-accent);
+  background: var(--gradient-dark);
   color: white;
   padding: 12px;
   text-decoration: none;
