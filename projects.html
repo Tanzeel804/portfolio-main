@@ -51,33 +51,128 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-      .typewriter-container {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 2rem;
-        min-height: 2.5rem;
+      /* Enhanced Header Layout */
+      .header-content {
+        max-width: 100%;
         text-align: center;
       }
 
-      .typewriter-text {
-        color: var(--accent-light);
+      .page-title {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #ffffff, #e3f2fd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .typewriter-container {
+        text-align: center;
+        font-size: 2rem;
         font-weight: 600;
+        margin-bottom: 1rem;
+        min-height: 2.5rem;
+        color: var(--accent-light);
+        position: relative;
       }
 
-      .cursor {
-        animation: blink 1s infinite;
-        color: var(--accent);
-        font-weight: bold;
+      .typewriter-text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 3px solid var(--accent-light);
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.05em;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
       }
 
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
         }
         50% {
-          opacity: 0;
+          border-color: var(--accent-light);
         }
+      }
+
+      .page-subtitle {
+        text-align: center;
+        color: #e3f2fd;
+        font-size: 1.3rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+
+      [data-theme="light"] .page-subtitle {
+        color: #4b5563;
+      }
+
+      /* Enhanced Floating Animation */
+      @keyframes enhanced-float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-15px) rotate(1deg);
+        }
+        66% {
+          transform: translateY(-8px) rotate(-1deg);
+        }
+      }
+
+      .enhanced-float {
+        animation: enhanced-float 4s ease-in-out infinite;
+      }
+
+      .float-delay-1 {
+        animation-delay: 0.7s;
+      }
+
+      .float-delay-2 {
+        animation-delay: 1.4s;
+      }
+
+      /* Enhanced Pulse Animation */
+      @keyframes enhanced-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .enhanced-pulse {
+        animation: enhanced-pulse 3s ease-in-out infinite;
+      }
+
+      /* Scroll Progress Indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: var(--gradient-primary);
+        z-index: 999;
+        transition: width 0.1s ease;
+        box-shadow: 0 2px 10px rgba(255, 107, 107, 0.5);
       }
 
       /* Enhanced Technology Stack Section */
@@ -196,6 +291,7 @@
         font-size: 0.9rem;
         line-height: 1.2;
       }
+
       /* Skills Progress Section */
       .skills-progress-section {
         background: linear-gradient(
@@ -290,6 +386,7 @@
         position: relative;
         overflow: hidden;
         background: var(--bg-card);
+        border-radius: 1.5rem;
       }
 
       .project-card::before {
@@ -325,7 +422,18 @@
       }
 
       /* Enhanced Enhancement Items */
+      .enhancement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
       .enhancement-item {
+        background: var(--gradient-card);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
         position: relative;
@@ -377,6 +485,7 @@
       .enhancement-icon {
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         color: var(--accent);
+        margin-bottom: 1rem;
       }
 
       /* Enhanced Project Links */
@@ -419,6 +528,8 @@
         transition: all 0.3s ease;
         padding: 0.5rem;
         border-radius: 0.5rem;
+        list-style: none;
+        margin-bottom: 0.5rem;
       }
 
       .feature-list li:hover {
@@ -434,10 +545,187 @@
 
       .feature-list i {
         transition: all 0.3s ease;
+        margin-right: 0.5rem;
+      }
+
+      /* Enhanced Social Links */
+      .social-link-large {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: var(--gradient-card);
+        border-radius: 1rem;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-link-large::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-primary);
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .social-link-large:hover::before {
+        left: 0;
+      }
+
+      .social-link-large:hover {
+        color: white;
+        transform: translateX(10px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        border-color: transparent;
+      }
+
+      .social-link-large i {
+        font-size: 1.5rem;
+        width: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .social-link-large:hover i {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      /* Enhanced Info Cards */
+      .info-card {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--gradient-card);
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .info-card:hover {
+        transform: translateX(8px) scale(1.02);
+        box-shadow: 0 10px 30px var(--shadow);
+        border-color: var(--accent);
+        background: var(--gradient-primary);
+      }
+
+      .info-card:hover .info-icon,
+      .info-card:hover h5,
+      .info-card:hover p {
+        color: white;
+        -webkit-text-fill-color: white;
+      }
+
+      .info-card:hover .btn-outline {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-color: white;
+      }
+
+      .info-icon {
+        font-size: 2.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-content {
+          text-align: center !important;
+        }
+
+        .page-title {
+          text-align: center !important;
+          font-size: 2.8rem !important;
+        }
+
+        .typewriter-container {
+          text-align: center !important;
+          font-size: 1.6rem !important;
+        }
+
+        .page-subtitle {
+          text-align: center !important;
+          margin: 0 auto !important;
+          font-size: 1.1rem !important;
+        }
+
+        .contact-form-container {
+          padding: 2rem;
+        }
+
+        .contact-method-card {
+          padding: 2rem;
+        }
+
+        .contact-icon-enhanced {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-title {
+          font-size: 2.2rem !important;
+        }
+
+        .typewriter-container {
+          font-size: 1.3rem !important;
+        }
+
+        .contact-form-container {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Additional Enhancements */
+      .btn-primary {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
       }
     </style>
   </head>
   <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -479,18 +767,22 @@
     <section class="page-header">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h1 class="page-title" data-aos="fade-up">My Projects</h1>
-            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
-              Showcasing Innovative Web Solutions
-            </p>
-            <div
-              class="typewriter-container"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <span class="typewriter-text" id="typewriter"></span>
-              <span class="cursor">|</span>
+          <div class="col-lg-12">
+            <div class="header-content" data-aos="fade-up">
+              <h1 class="page-title mb-2">My Projects</h1>
+              <div
+                class="typewriter-container mb-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span class="typewriter-text"
+                  >Building Digital Experiences</span
+                >
+              </div>
+              <p class="page-subtitle" data-aos="fade-up" data-aos-delay="400">
+                Showcasing my journey through innovative web development
+                projects and creative solutions.
+              </p>
             </div>
           </div>
         </div>
@@ -562,64 +854,64 @@
             </div>
 
             <div class="tech-stack-grid">
-              <div class="tech-item">
+              <div class="tech-item enhanced-float">
                 <i class="fab fa-html5 tech-icon" style="color: #e34f26"></i>
                 <span class="tech-name">HTML5</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-1">
                 <i class="fab fa-css3-alt tech-icon" style="color: #1572b6"></i>
                 <span class="tech-name">CSS3</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-2">
                 <i
                   class="fab fa-js-square tech-icon"
                   style="color: #f7df1e"
                 ></i>
                 <span class="tech-name">JavaScript</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float">
                 <i
                   class="fab fa-bootstrap tech-icon"
                   style="color: #7952b3"
                 ></i>
                 <span class="tech-name">Bootstrap</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-1">
                 <i class="fab fa-python tech-icon" style="color: #3776ab"></i>
                 <span class="tech-name">Python</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-2">
                 <i class="fas fa-robot tech-icon" style="color: #ff6b35"></i>
                 <span class="tech-name">AI Prompt Engineering</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float">
                 <i class="fab fa-git-alt tech-icon" style="color: #f05032"></i>
                 <span class="tech-name">Git</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-1">
                 <i class="fas fa-code tech-icon" style="color: #3b82f6"></i>
                 <span class="tech-name">Frontend Development</span>
               </div>
               <!-- New Added Skills -->
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-2">
                 <i
                   class="fas fa-mobile-alt tech-icon"
                   style="color: #8b5cf6"
                 ></i>
                 <span class="tech-name">Responsive Design</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float">
                 <i
                   class="fas fa-paint-brush tech-icon"
                   style="color: #06b6d4"
                 ></i>
                 <span class="tech-name">UI/UX Design</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-1">
                 <i class="fas fa-brain tech-icon" style="color: #10b981"></i>
                 <span class="tech-name">Problem Solving</span>
               </div>
-              <div class="tech-item">
+              <div class="tech-item enhanced-float float-delay-2">
                 <i
                   class="fas fa-project-diagram tech-icon"
                   style="color: #f59e0b"
@@ -766,7 +1058,7 @@
                 fully-featured e-commerce solution.
               </p>
               <div class="enhancement-grid">
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float">
                   <div class="enhancement-icon">
                     <i class="fas fa-tachometer-alt fa-2x"></i>
                   </div>
@@ -776,7 +1068,7 @@
                     reporting features
                   </p>
                 </div>
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float float-delay-1">
                   <div class="enhancement-icon">
                     <i class="fas fa-credit-card fa-2x"></i>
                   </div>
@@ -786,7 +1078,7 @@
                     local payment methods
                   </p>
                 </div>
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float float-delay-2">
                   <div class="enhancement-icon">
                     <i class="fas fa-user-shield fa-2x"></i>
                   </div>
@@ -796,7 +1088,7 @@
                     with 2FA
                   </p>
                 </div>
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float">
                   <div class="enhancement-icon">
                     <i class="fas fa-star fa-2x"></i>
                   </div>
@@ -805,7 +1097,7 @@
                     Advanced rating and review system with AI-powered moderation
                   </p>
                 </div>
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float float-delay-1">
                   <div class="enhancement-icon">
                     <i class="fas fa-robot fa-2x"></i>
                   </div>
@@ -814,7 +1106,7 @@
                     Machine learning based personalized product recommendations
                   </p>
                 </div>
-                <div class="enhancement-item">
+                <div class="enhancement-item enhanced-float float-delay-2">
                   <div class="enhancement-icon">
                     <i class="fas fa-mobile-alt fa-2x"></i>
                   </div>
@@ -866,7 +1158,7 @@
         <div class="row mt-5">
           <!-- Project 2 -->
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <div class="project-card">
+            <div class="project-card enhanced-float">
               <div class="project-image">
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
@@ -950,7 +1242,7 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="project-card">
+            <div class="project-card enhanced-float float-delay-1">
               <div class="project-image">
                 <img
                   src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
@@ -1034,7 +1326,7 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="project-card">
+            <div class="project-card enhanced-float float-delay-2">
               <div class="project-image">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
@@ -1167,50 +1459,42 @@
               <a
                 href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/"
                 target="_blank"
-                class="social-link-enhanced"
+                class="social-link-large"
                 data-aos="zoom-in"
                 data-aos-delay="300"
               >
-                <div class="social-icon">
-                  <i class="fab fa-linkedin"></i>
-                </div>
-                <span class="social-text">LinkedIn</span>
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
               </a>
               <a
                 href="https://github.com/Tanzeel804"
                 target="_blank"
-                class="social-link-enhanced"
+                class="social-link-large"
                 data-aos="zoom-in"
                 data-aos-delay="400"
               >
-                <div class="social-icon">
-                  <i class="fab fa-github"></i>
-                </div>
-                <span class="social-text">GitHub</span>
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
               </a>
               <a
                 href="https://www.instagram.com/tanzeelahmedpov/"
                 target="_blank"
-                class="social-link-enhanced"
+                class="social-link-large"
                 data-aos="zoom-in"
                 data-aos-delay="500"
               >
-                <div class="social-icon">
-                  <i class="fab fa-instagram"></i>
-                </div>
-                <span class="social-text">Instagram</span>
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
               </a>
               <a
                 href="https://www.facebook.com/tanzeelahmedpov"
                 target="_blank"
-                class="social-link-enhanced"
+                class="social-link-large"
                 data-aos="zoom-in"
                 data-aos-delay="600"
               >
-                <div class="social-icon">
-                  <i class="fab fa-facebook"></i>
-                </div>
-                <span class="social-text">Facebook</span>
+                <i class="fab fa-facebook"></i>
+                <span>Facebook</span>
               </a>
             </div>
             <p class="footer-cta mt-4" data-aos="fade-up" data-aos-delay="700">
@@ -1244,69 +1528,39 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-      // Typewriter Effect for Projects Page
-      class Typewriter {
-        constructor() {
-          this.texts = [
-            "Building Digital Experiences",
-            "Transforming Ideas into Reality",
-            "Crafting Innovative Solutions",
-            "Pushing Web Development Boundaries",
-          ];
-          this.speed = 100;
-          this.deleteSpeed = 50;
-          this.pauseTime = 2000;
-          this.currentTextIndex = 0;
-          this.currentCharIndex = 0;
-          this.isDeleting = false;
-          this.typewriterElement = document.getElementById("typewriter");
-          this.init();
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Scroll Progress Indicator
+      window.addEventListener("scroll", function () {
+        const winHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+        const scrollProgress = document.getElementById("scrollProgress");
+        if (scrollProgress) {
+          scrollProgress.style.width = scrollPercent + "%";
         }
+      });
 
-        type() {
-          const currentText = this.texts[this.currentTextIndex];
+      // Enhanced hover effects for project cards
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-12px) scale(1.02)";
+        });
 
-          if (this.isDeleting) {
-            this.typewriterElement.textContent = currentText.substring(
-              0,
-              this.currentCharIndex - 1
-            );
-            this.currentCharIndex--;
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "";
+        });
+      });
 
-            if (this.currentCharIndex === 0) {
-              this.isDeleting = false;
-              this.currentTextIndex =
-                (this.currentTextIndex + 1) % this.texts.length;
-              setTimeout(() => this.type(), 500);
-            } else {
-              setTimeout(() => this.type(), this.deleteSpeed);
-            }
-          } else {
-            this.typewriterElement.textContent = currentText.substring(
-              0,
-              this.currentCharIndex + 1
-            );
-            this.currentCharIndex++;
-
-            if (this.currentCharIndex === currentText.length) {
-              this.isDeleting = true;
-              setTimeout(() => this.type(), this.pauseTime);
-            } else {
-              setTimeout(() => this.type(), this.speed);
-            }
-          }
-        }
-
-        init() {
-          if (this.typewriterElement) {
-            setTimeout(() => this.type(), 1000);
-          }
-        }
-      }
-
-      // Enhanced Hover Effects and Animations
-      function initializeEnhancedEffects() {
-        // Progress bar animation
+      // Progress bar animation
+      document.addEventListener("DOMContentLoaded", function () {
         const progressBars = document.querySelectorAll(".progress-bar");
         progressBars.forEach((bar) => {
           const width = bar.getAttribute("data-width");
@@ -1314,156 +1568,58 @@
             bar.style.width = width + "%";
           }, 500);
         });
+      });
 
-        // Tech item enhanced effects
-        const techItems = document.querySelectorAll(".tech-item");
-        techItems.forEach((item) => {
-          const icon = item.querySelector(".tech-icon");
-
-          item.addEventListener("mouseenter", function () {
-            icon.style.transform = "scale(1.3) rotate(10deg)";
-          });
-
-          item.addEventListener("mouseleave", function () {
-            icon.style.transform = "scale(1) rotate(0)";
-          });
-
-          item.addEventListener("click", function () {
-            this.style.transform = "scale(0.95)";
-            setTimeout(() => {
-              this.style.transform = "translateY(-8px) scale(1.05)";
-            }, 150);
-          });
+      // Back to top functionality
+      const backToTopBtn = document.getElementById("backToTop");
+      if (backToTopBtn) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 500) {
+            backToTopBtn.classList.add("show");
+          } else {
+            backToTopBtn.classList.remove("show");
+          }
         });
 
-        // Enhanced enhancement item effects
-        const enhancementItems = document.querySelectorAll(".enhancement-item");
-        enhancementItems.forEach((item) => {
-          const icon = item.querySelector(".enhancement-icon");
-
-          item.addEventListener("mouseenter", function () {
-            icon.style.transform = "scale(1.3) rotate(8deg)";
-            icon.style.color = "#ffffff";
-          });
-
-          item.addEventListener("mouseleave", function () {
-            icon.style.transform = "scale(1) rotate(0)";
-            icon.style.color = "";
-          });
-        });
-
-        // Project card enhanced effects
-        const projectCards = document.querySelectorAll(".project-card");
-        projectCards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-12px) scale(1.02)";
-            this.style.boxShadow = "0 25px 50px rgba(59, 130, 246, 0.3)";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0) scale(1)";
-            this.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-          });
-        });
-
-        // Feature list item effects
-        const featureItems = document.querySelectorAll(".feature-list li");
-        featureItems.forEach((item) => {
-          const icon = item.querySelector("i");
-
-          item.addEventListener("mouseenter", function () {
-            icon.style.transform = "scale(1.3)";
-            icon.style.color = "#3b82f6";
-          });
-
-          item.addEventListener("mouseleave", function () {
-            icon.style.transform = "scale(1)";
-            icon.style.color = "";
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
           });
         });
       }
 
-      // Initialize when DOM is loaded
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Typewriter
-        new Typewriter();
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        const savedTheme = localStorage.getItem("theme-preference") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        updateToggleIcon(savedTheme);
 
-        // Initialize AOS
-        if (typeof AOS !== "undefined") {
-          AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-            easing: "ease-out-cubic",
-          });
-        }
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme-preference", newTheme);
+          updateToggleIcon(newTheme);
 
-        // Initialize enhanced effects
-        initializeEnhancedEffects();
+          // Add rotation animation
+          themeToggle.style.transform = "rotate(180deg)";
+          setTimeout(() => {
+            themeToggle.style.transform = "rotate(0)";
+          }, 300);
+        });
 
-        // Back to top functionality
-        const backToTopBtn = document.getElementById("backToTop");
-        if (backToTopBtn) {
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 500) {
-              backToTopBtn.classList.add("show");
-            } else {
-              backToTopBtn.classList.remove("show");
-            }
-          });
-
-          backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          });
-        }
-
-        // Navbar scroll effect
-        const navbar = document.querySelector(".navbar");
-        if (navbar) {
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-              navbar.classList.add("scrolled");
-            } else {
-              navbar.classList.remove("scrolled");
-            }
-          });
-        }
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById("themeToggle");
-        if (themeToggle) {
-          const savedTheme = localStorage.getItem("theme-preference") || "dark";
-          document.documentElement.setAttribute("data-theme", savedTheme);
-          updateToggleIcon(savedTheme);
-
-          themeToggle.addEventListener("click", () => {
-            const currentTheme =
-              document.documentElement.getAttribute("data-theme");
-            const newTheme = currentTheme === "light" ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", newTheme);
-            localStorage.setItem("theme-preference", newTheme);
-            updateToggleIcon(newTheme);
-
-            // Add rotation animation
-            themeToggle.style.transform = "rotate(180deg)";
-            setTimeout(() => {
-              themeToggle.style.transform = "rotate(0)";
-            }, 300);
-          });
-
-          function updateToggleIcon(theme) {
-            const icon = themeToggle.querySelector("i");
-            if (theme === "light") {
-              icon.className = "fas fa-sun";
-            } else {
-              icon.className = "fas fa-moon";
-            }
+        function updateToggleIcon(theme) {
+          const icon = themeToggle.querySelector("i");
+          if (theme === "light") {
+            icon.className = "fas fa-sun";
+          } else {
+            icon.className = "fas fa-moon";
           }
         }
-      });
+      }
     </script>
   </body>
 </html>
