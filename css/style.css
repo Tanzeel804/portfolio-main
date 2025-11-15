@@ -1,4 +1,4 @@
-/* 1. CSS Variables (Dark/Light themes) - UPDATED WITH WEBGRADIENTS */
+/* 1. CSS Variables (Dark/Light themes) - UPDATED WITH NEW ATTRACTIVE GRADIENTS */
 :root {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
@@ -14,17 +14,17 @@
   --border: #374151;
   --shadow: rgba(0, 0, 0, 0.4);
 
-  /* UPDATED GRADIENTS - From WebGradients.com */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-hero: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  /* UPDATED GRADIENTS - New Attractive Colors */
+  --gradient-primary: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+  --gradient-secondary: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  --gradient-hero: linear-gradient(120deg, #74b9ff 0%, #0984e3 100%);
+  --gradient-accent: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
   --gradient-card: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-  --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-  --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-cool: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  --gradient-premium: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);
+  --gradient-success: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  --gradient-warm: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%);
+  --gradient-cool: linear-gradient(135deg, #00cec9 0%, #74b9ff 100%);
+  --gradient-dark: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+  --gradient-premium: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
 }
 
 [data-theme="light"] {
@@ -42,13 +42,13 @@
   --border: #e5e7eb;
   --shadow: rgba(0, 0, 0, 0.1);
 
-  /* LIGHT THEME GRADIENTS - From WebGradients.com */
-  --gradient-primary: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  --gradient-secondary: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  --gradient-hero: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  --gradient-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* LIGHT THEME GRADIENTS - New Attractive Colors */
+  --gradient-primary: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+  --gradient-secondary: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  --gradient-hero: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  --gradient-accent: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
   --gradient-card: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-  --gradient-success: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  --gradient-success: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   --gradient-warm: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   --gradient-cool: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
   --gradient-dark: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
@@ -117,7 +117,7 @@ p {
 }
 
 /* 5. Components */
-/* Buttons - UPDATED WITH BETTER GRADIENTS */
+/* Buttons - UPDATED WITH NEW GRADIENTS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -133,15 +133,15 @@ p {
 }
 
 .btn-primary {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #ff5252 0%, #ff9800 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
 }
 
 .btn-outline {
@@ -152,10 +152,10 @@ p {
 }
 
 .btn-outline:hover {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
 .btn-theme-toggle {
@@ -172,10 +172,10 @@ p {
 }
 
 .btn-theme-toggle:hover {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   transform: rotate(15deg);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 /* Cards - UPDATED GRADIENTS */
@@ -236,7 +236,7 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   transition: width 0.3s ease;
 }
 
@@ -251,7 +251,7 @@ p {
   color: var(--text-primary);
 }
 
-/* 7. Hero Section - UPDATED WITH BEAUTIFUL GRADIENT */
+/* 7. Hero Section - UPDATED WITH NEW GRADIENT */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -280,7 +280,7 @@ p {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -294,7 +294,7 @@ p {
 }
 
 .typewriter-text {
-  color: #e0f7fa;
+  color: #e3f2fd;
   font-weight: 600;
 }
 
@@ -316,7 +316,7 @@ p {
 .hero-description {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #e0f7fa;
+  color: #e3f2fd;
   max-width: 600px;
 }
 
@@ -336,7 +336,7 @@ p {
   height: 400px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(132, 250, 176, 0.8);
+  border: 4px solid rgba(116, 185, 255, 0.8);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
@@ -400,7 +400,7 @@ p {
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -507,7 +507,7 @@ p {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(79, 172, 254, 0.1),
+    rgba(253, 121, 168, 0.1),
     transparent
   );
   transition: left 0.6s ease;
@@ -519,13 +519,13 @@ p {
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(79, 172, 254, 0.2);
+  box-shadow: 0 25px 50px rgba(253, 121, 168, 0.2);
   border-color: var(--accent);
 }
 
 .project-card.featured {
   border: 2px solid var(--accent);
-  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.3);
+  box-shadow: 0 15px 40px rgba(253, 121, 168, 0.3);
 }
 
 .project-image {
@@ -574,7 +574,7 @@ p {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -588,19 +588,19 @@ p {
 }
 
 .tech-badge {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
 }
 
 .project-description {
@@ -642,7 +642,7 @@ p {
 .form-control:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1);
+  box-shadow: 0 0 0 4px rgba(253, 121, 168, 0.1);
   background: var(--gradient-card);
 }
 
@@ -673,7 +673,7 @@ p {
 .contact-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -699,10 +699,10 @@ p {
 }
 
 .social-link-large:hover {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
 .social-link-large i {
@@ -729,7 +729,7 @@ p {
 
 .info-icon {
   font-size: 2.5rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -742,7 +742,7 @@ p {
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
 }
 
 .success-icon {
@@ -831,7 +831,7 @@ p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   transition: left 0.3s ease;
   z-index: -1;
 }
@@ -844,7 +844,7 @@ p {
   color: white;
   transform: scale(1.1) rotate(5deg);
   border-color: transparent;
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
 .footer-bottom {
@@ -854,7 +854,7 @@ p {
 }
 
 .back-to-top {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 50%;
@@ -867,7 +867,7 @@ p {
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .back-to-top.show {
@@ -878,10 +878,8 @@ p {
 .back-to-top:hover {
   background: var(--gradient-success);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(67, 233, 123, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
 }
-
-/* Rest of the CSS remains the same with updated gradient variables... */
 
 /* Page Header Styles - UPDATED GRADIENTS */
 .page-header {
@@ -913,7 +911,7 @@ p {
 .page-subtitle {
   position: relative;
   z-index: 2;
-  color: #e0f7fa;
+  color: #e3f2fd;
   font-size: 1.25rem;
 }
 
@@ -941,7 +939,7 @@ p {
 }
 
 .education-info h3 {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -969,7 +967,7 @@ p {
 }
 
 .why-iub h4 {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -990,7 +988,7 @@ p {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   transform: translateX(-50%);
 }
 
@@ -1011,14 +1009,14 @@ p {
 }
 
 .timeline-date {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-weight: 600;
   display: inline-block;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .timeline-content {
@@ -1041,10 +1039,10 @@ p {
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   border-radius: 50%;
   top: 2rem;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .timeline-item:nth-child(odd) .timeline-content::before {
@@ -1076,7 +1074,7 @@ p {
 .skill-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1128,13 +1126,13 @@ p {
 
 .project-category,
 .project-date {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 .project-image-main {
@@ -1145,7 +1143,7 @@ p {
 }
 
 .project-info h3 {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1167,14 +1165,14 @@ p {
   border: 2px solid var(--accent);
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
 }
 
 .tech-tag:hover {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
 }
 
 .feature-list {
@@ -1235,7 +1233,7 @@ p {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(79, 172, 254, 0.1),
+    rgba(253, 121, 168, 0.1),
     transparent
   );
   transition: left 0.6s ease;
@@ -1247,8 +1245,8 @@ p {
 
 .enhancement-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(79, 172, 254, 0.2);
-  background: var(--gradient-dark);
+  box-shadow: 0 20px 40px rgba(253, 121, 168, 0.2);
+  background: var(--gradient-primary);
   border-color: transparent;
 }
 
@@ -1268,7 +1266,7 @@ p {
 .enhancement-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1317,7 +1315,7 @@ p {
 }
 
 .terms-section h2 {
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1419,7 +1417,7 @@ button:focus,
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--gradient-dark);
+  background: var(--gradient-primary);
   color: white;
   padding: 12px;
   text-decoration: none;
