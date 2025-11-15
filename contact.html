@@ -46,6 +46,32 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      @media (max-width: 768px) {
+        .header-content {
+          text-align: center !important;
+        }
+
+        .page-title {
+          text-align: center !important;
+          font-size: 2.5rem !important;
+        }
+
+        .typewriter-container {
+          text-align: center !important;
+          font-size: 1.5rem !important;
+        }
+
+        .page-subtitle {
+          text-align: center !important;
+          margin: 0 auto !important;
+        }
+      }
+
+      [data-theme="light"] .page-subtitle {
+        color: #4b5563 !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -89,11 +115,57 @@
     <section class="page-header">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h1 class="page-title" data-aos="fade-up">Let's Connect</h1>
-            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
-              Get in Touch for Collaborations & Opportunities
-            </p>
+          <div class="col-lg-12">
+            <div
+              class="header-content text-lg-start text-center"
+              data-aos="fade-up"
+              style="max-width: 100%"
+            >
+              <h1
+                class="page-title mb-3"
+                style="
+                  text-align: left;
+                  font-size: 3.5rem;
+                  font-weight: 700;
+                  margin-bottom: 1rem;
+                "
+              >
+                Let's Connect
+              </h1>
+              <div
+                class="typewriter-container mb-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                style="
+                  text-align: left;
+                  font-size: 1.8rem;
+                  font-weight: 500;
+                  margin-bottom: 1.5rem;
+                  min-height: 2.5rem;
+                "
+              >
+                <span
+                  class="typewriter-text"
+                  id="typewriter"
+                  data-words='["Build Amazing Projects", "Collaborate & Innovate", "Discuss Technology", "Create Solutions", "Transform Ideas"]'
+                  data-wait="2000"
+                ></span>
+                <span class="cursor">|</span>
+              </div>
+              <p
+                class="page-subtitle"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                style="
+                  text-align: left;
+                  color: #e3f2fd;
+                  font-size: 1.25rem;
+                  max-width: 600px;
+                "
+              >
+                Get in Touch for Collaborations & Opportunities
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -521,6 +593,81 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Typewriter Effect
+      class TypeWriter {
+        constructor(txtElement, words, wait = 3000) {
+          this.txtElement = txtElement;
+          this.words = words;
+          this.txt = "";
+          this.wordIndex = 0;
+          this.wait = parseInt(wait, 10);
+          this.type();
+          this.isDeleting = false;
+        }
+
+        type() {
+          // Current index of word
+          const current = this.wordIndex % this.words.length;
+          // Get full text of current word
+          const fullTxt = this.words[current];
+
+          // Check if deleting
+          if (this.isDeleting) {
+            // Remove char
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            // Add char
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+
+          // Insert txt into element
+          this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+          // Initial Type Speed
+          let typeSpeed = 100;
+
+          if (this.isDeleting) {
+            typeSpeed /= 2;
+          }
+
+          // If word is complete
+          if (!this.isDeleting && this.txt === fullTxt) {
+            // Make pause at end
+            typeSpeed = this.wait;
+            // Set delete to true
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            // Move to next word
+            this.wordIndex++;
+            // Pause before start typing
+            typeSpeed = 500;
+          }
+
+          setTimeout(() => this.type(), typeSpeed);
+        }
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        const txtElement = document.getElementById("typewriter");
+        if (txtElement) {
+          const words = JSON.parse(txtElement.getAttribute("data-words"));
+          const wait = txtElement.getAttribute("data-wait");
+          new TypeWriter(txtElement, words, wait);
+        }
+      });
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

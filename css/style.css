@@ -1,4 +1,4 @@
-/* 1. CSS Variables (Dark/Light themes) - UPDATED WITH NEW ATTRACTIVE GRADIENTS */
+/* 1. CSS Variables (Dark/Light themes) - IMPROVED LIGHT THEME */
 :root {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
@@ -14,7 +14,7 @@
   --border: #374151;
   --shadow: rgba(0, 0, 0, 0.4);
 
-  /* UPDATED GRADIENTS - New Attractive Colors */
+  /* DARK THEME GRADIENTS - Orange/Yellow Combo (Keep as is) */
   --gradient-primary: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
   --gradient-secondary: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
   --gradient-hero: linear-gradient(120deg, #74b9ff 0%, #0984e3 100%);
@@ -42,17 +42,17 @@
   --border: #e5e7eb;
   --shadow: rgba(0, 0, 0, 0.1);
 
-  /* LIGHT THEME GRADIENTS - New Attractive Colors */
-  --gradient-primary: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
-  --gradient-secondary: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-  --gradient-hero: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-  --gradient-accent: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-  --gradient-success: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  --gradient-warm: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-  --gradient-cool: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-  --gradient-dark: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-premium: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%);
+  /* IMPROVED LIGHT THEME GRADIENTS - More Vibrant & Attractive */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-hero: linear-gradient(120deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-accent: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  --gradient-success: linear-gradient(135deg, #69f0ae 0%, #00e676 100%);
+  --gradient-warm: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  --gradient-cool: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --gradient-dark: linear-gradient(135deg, #4a5568 0%, #718096 100%);
+  --gradient-premium: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
 }
 
 /* 2. Reset & Base Styles */
@@ -135,13 +135,17 @@ p {
 .btn-primary {
   background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #ff5252 0%, #ff9800 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a419c 100%);
 }
 
 .btn-outline {
@@ -155,7 +159,7 @@ p {
   background: var(--gradient-primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 25px var(--shadow);
 }
 
 .btn-theme-toggle {
@@ -175,7 +179,7 @@ p {
   background: var(--gradient-primary);
   color: white;
   transform: rotate(15deg);
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 /* Cards - UPDATED GRADIENTS */
@@ -207,6 +211,10 @@ p {
   box-shadow: 0 2px 30px var(--shadow);
   padding: 0.5rem 0;
   backdrop-filter: blur(20px);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .navbar-brand {
@@ -271,6 +279,10 @@ p {
   background: rgba(15, 23, 42, 0.7);
 }
 
+[data-theme="light"] .hero-section::before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -286,6 +298,13 @@ p {
   background-clip: text;
 }
 
+[data-theme="light"] .hero-title {
+  background: linear-gradient(135deg, #1f2937, #4a5568);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .typewriter-container {
   font-size: 2rem;
   font-weight: 500;
@@ -296,6 +315,10 @@ p {
 .typewriter-text {
   color: #e3f2fd;
   font-weight: 600;
+}
+
+[data-theme="light"] .typewriter-text {
+  color: #1f2937;
 }
 
 .cursor {
@@ -320,6 +343,10 @@ p {
   max-width: 600px;
 }
 
+[data-theme="light"] .hero-description {
+  color: #4b5563;
+}
+
 .hero-buttons {
   display: flex;
   gap: 1rem;
@@ -339,6 +366,10 @@ p {
   border: 4px solid rgba(116, 185, 255, 0.8);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .profile-image {
+  border: 4px solid rgba(79, 172, 254, 0.8);
 }
 
 .image-glow {
@@ -382,6 +413,11 @@ p {
   border-right: 3px solid rgba(255, 255, 255, 0.8);
   border-bottom: 3px solid rgba(255, 255, 255, 0.8);
   transform: rotate(45deg);
+}
+
+[data-theme="light"] .scroll-arrow {
+  border-right: 3px solid rgba(79, 172, 254, 0.8);
+  border-bottom: 3px solid rgba(79, 172, 254, 0.8);
 }
 
 @keyframes bounce {
@@ -513,19 +549,28 @@ p {
   transition: left 0.6s ease;
 }
 
+[data-theme="light"] .project-card::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102, 126, 234, 0.1),
+    transparent
+  );
+}
+
 .project-card:hover::before {
   left: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(253, 121, 168, 0.2);
+  box-shadow: 0 25px 50px var(--shadow);
   border-color: var(--accent);
 }
 
 .project-card.featured {
   border: 2px solid var(--accent);
-  box-shadow: 0 15px 40px rgba(253, 121, 168, 0.3);
+  box-shadow: 0 15px 40px var(--shadow);
 }
 
 .project-image {
@@ -562,6 +607,14 @@ p {
   transition: opacity 0.3s ease;
 }
 
+[data-theme="light"] .project-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 250, 252, 0.9)
+  );
+}
+
 .project-card:hover .project-overlay {
   opacity: 1;
 }
@@ -594,13 +647,13 @@ p {
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 2px 8px var(--shadow);
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .project-description {
@@ -644,6 +697,10 @@ p {
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(253, 121, 168, 0.1);
   background: var(--gradient-card);
+}
+
+[data-theme="light"] .form-control:focus {
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 .form-error {
@@ -702,7 +759,7 @@ p {
   background: var(--gradient-primary);
   color: white;
   transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 25px var(--shadow);
 }
 
 .social-link-large i {
@@ -742,7 +799,7 @@ p {
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .success-icon {
@@ -794,7 +851,7 @@ p {
 .footer-profile-img:hover {
   transform: scale(1.1) rotate(5deg);
   border-color: var(--accent-light);
-  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 12px 35px var(--shadow);
 }
 
 .image-glow-footer {
@@ -881,6 +938,10 @@ p {
   padding-left: 1rem;
 }
 
+[data-theme="light"] .footer-link:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
 .footer-link i {
   width: 20px;
   font-size: 0.9rem;
@@ -927,7 +988,7 @@ p {
 .social-link-enhanced:hover {
   color: white;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 10px 25px var(--shadow);
   border-color: transparent;
 }
 
@@ -967,7 +1028,7 @@ p {
   background: var(--gradient-primary);
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
 /* Enhanced Footer Bottom */
@@ -1006,7 +1067,7 @@ p {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
   position: relative;
   overflow: hidden;
 }
@@ -1039,7 +1100,11 @@ p {
 .back-to-top-enhanced:hover {
   background: linear-gradient(135deg, #ff5252 0%, #ff9800 100%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+[data-theme="light"] .back-to-top-enhanced:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a419c 100%);
 }
 
 .back-to-top-text {
