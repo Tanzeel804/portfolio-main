@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects by Tanzeel Ahmed - Web Development Portfolio</title>
+    <meta
+      name="description"
+      content="Explore Tanzeel Ahmed's web development projects including e-commerce websites, portfolio templates, and innovative web applications."
+    />
+    <meta
+      name="keywords"
+      content="Tanzeel Ahmed, Projects, Web Development, E-commerce, Portfolio, JavaScript"
+    />
+    <meta name="author" content="Tanzeel Ahmed" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Projects by Tanzeel Ahmed - Web Development Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore my web development projects including e-commerce websites, portfolio templates, and innovative web applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://tanzeel804.github.io/projects.html"
+    />
+    <meta property="og:image" content="images/project1.jpg" />
+
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .typewriter-container {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        min-height: 2.5rem;
+        text-align: center;
+      }
+
+      .typewriter-text {
+        color: var(--accent-light);
+        font-weight: 600;
+      }
+
+      .cursor {
+        animation: blink 1s infinite;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .project-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .project-card:hover::before {
+        left: 100%;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px var(--shadow);
+        border-color: var(--accent);
+      }
+
+      .tech-badge {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .tech-badge:hover {
+        transform: scale(1.1);
+        background: var(--accent-hover) !important;
+      }
+
+      .enhancement-item {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .enhancement-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px var(--shadow);
+        background: var(--accent-light);
+        color: white;
+      }
+
+      .enhancement-item:hover .enhancement-icon {
+        color: white;
+      }
+
+      .project-links .btn {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-links .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .project-links .btn:hover::before {
+        left: 100%;
+      }
+
+      .project-links .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px var(--shadow);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Tanzeel Ahmed</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Connect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="terms.html">Terms</a>
+            </li>
+          </ul>
+          <button class="btn btn-theme-toggle ms-3" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="page-title" data-aos="fade-up">My Projects</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+              Showcasing Innovative Web Solutions
+            </p>
+            <div
+              class="typewriter-container"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <span class="typewriter-text" id="typewriter"></span>
+              <span class="cursor">|</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project: E-commerce Website -->
+    <section class="section-padding" id="ecommerce">
+      <div class="container">
+        <div class="project-detail">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="project-header text-center" data-aos="fade-up">
+                <h2 class="project-title">Modern E-commerce Platform</h2>
+                <div class="project-meta">
+                  <span class="project-category">Full Stack Development</span>
+                  <span class="project-date">Completed: 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="project-image-main">
+                <img
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  alt="Modern E-commerce Platform"
+                  class="img-fluid rounded"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="project-info">
+                <h3>Project Overview</h3>
+                <p>
+                  A cutting-edge e-commerce platform built with modern web
+                  technologies, featuring responsive design, intuitive user
+                  interface, and seamless shopping experience. This project
+                  demonstrates advanced frontend development skills combined
+                  with practical e-commerce functionality.
+                </p>
+                <p>
+                  The platform includes product catalog management, shopping
+                  cart functionality, user authentication, and order processing
+                  system. Special attention was given to creating an accessible
+                  and user-friendly interface that works flawlessly across all
+                  devices and screen sizes.
+                </p>
+                <p>
+                  Developing this comprehensive e-commerce solution provided
+                  valuable experience in handling complex state management,
+                  implementing secure user authentication, and optimizing
+                  performance for better user experience and conversion rates.
+                </p>
+
+                <div class="project-tech mt-4">
+                  <h4>Technology Stack</h4>
+                  <div class="tech-tags">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript ES6+</span>
+                    <span class="tech-badge">Bootstrap 5</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Prompt Engineering</span>
+                    <span class="tech-badge">Git</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-12" data-aos="fade-up">
+              <h3>Key Features</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Advanced product filtering and search</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Real-time shopping cart updates</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>User authentication and profile management</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Responsive product galleries with zoom</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Secure checkout process</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Order tracking and history</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Admin dashboard for inventory</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Performance optimized loading</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-12" data-aos="fade-up">
+              <h3>Future Enhancements</h3>
+              <p>
+                This project serves as a foundation for continued development
+                and enhancement. Future updates will focus on adding advanced
+                functionality and integrating with backend services to create a
+                fully-featured e-commerce solution.
+              </p>
+              <div class="enhancement-grid">
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </div>
+                  <h5>Admin Dashboard</h5>
+                  <p>Advanced inventory management system with analytics</p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-credit-card"></i>
+                  </div>
+                  <h5>Payment Integration</h5>
+                  <p>Multiple payment gateways including Stripe and PayPal</p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                  <h5>User Authorization</h5>
+                  <p>
+                    Role-based access control and advanced security features
+                  </p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h5>Review System</h5>
+                  <p>Advanced rating and review system with moderation</p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-robot"></i>
+                  </div>
+                  <h5>AI Recommendations</h5>
+                  <p>Machine learning based product recommendations</p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h5>Mobile App</h5>
+                  <p>Native mobile application for iOS and Android</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-12 text-center" data-aos="fade-up">
+              <div class="project-links">
+                <a
+                  href="https://github.com/Tanzeel804/Ecommerce-site"
+                  target="_blank"
+                  class="btn btn-primary me-3"
+                >
+                  <i class="fab fa-github"></i> View Source Code
+                </a>
+                <a
+                  href="https://tanzeel804.github.io/Ecommerce-site/"
+                  target="_blank"
+                  class="btn btn-outline"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Projects -->
+    <section class="section-padding bg-secondary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+            <h2 class="section-title">More Projects</h2>
+            <p class="section-subtitle">
+              Exploring Diverse Web Development Challenges
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
+                  alt="AI E-commerce Store"
+                  class="img-fluid"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a
+                      href="https://tanzeel804.github.io/E-com-store-ai/"
+                      target="_blank"
+                      class="btn btn-primary"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">AI E-commerce Store</h3>
+                <div class="project-tech">
+                  <span class="tech-badge">HTML</span>
+                  <span class="tech-badge">CSS</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">Bootstrap</span>
+                  <span class="tech-badge">AI Integration</span>
+                </div>
+                <p class="project-description">
+                  An intelligent e-commerce platform featuring AI-powered
+                  product recommendations, smart search functionality, and
+                  personalized shopping experiences using modern web
+                  technologies and machine learning concepts.
+                </p>
+                <div class="project-features">
+                  <span class="feature">AI Recommendations</span>
+                  <span class="feature">Smart Search</span>
+                  <span class="feature">Personalized UI</span>
+                </div>
+                <div class="project-links mt-3">
+                  <a
+                    href="https://github.com/Tanzeel804/E-com-store-ai"
+                    target="_blank"
+                    class="btn btn-sm btn-outline"
+                  >
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                  <a
+                    href="https://tanzeel804.github.io/E-com-store-ai/"
+                    target="_blank"
+                    class="btn btn-sm btn-primary"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  alt="E-commerce Website v2"
+                  class="img-fluid"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a
+                      href="https://tanzeel804.github.io/e.com-site/"
+                      target="_blank"
+                      class="btn btn-primary"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">E-commerce Website v2</h3>
+                <div class="project-tech">
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">Bootstrap</span>
+                  <span class="tech-badge">Python</span>
+                </div>
+                <p class="project-description">
+                  Enhanced e-commerce website with improved user interface,
+                  better performance optimization, and additional features
+                  including wishlist functionality, advanced filtering, and
+                  enhanced product visualization.
+                </p>
+                <div class="project-features">
+                  <span class="feature">Wishlist</span>
+                  <span class="feature">Advanced Filters</span>
+                  <span class="feature">Enhanced UI</span>
+                </div>
+                <div class="project-links mt-3">
+                  <a
+                    href="https://github.com/Tanzeel804/e.com-site"
+                    target="_blank"
+                    class="btn btn-sm btn-outline"
+                  >
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                  <a
+                    href="https://tanzeel804.github.io/e.com-site/"
+                    target="_blank"
+                    class="btn btn-sm btn-primary"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  alt="Portfolio Template"
+                  class="img-fluid"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="btn btn-primary">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Portfolio Template</h3>
+                <div class="project-tech">
+                  <span class="tech-badge">HTML</span>
+                  <span class="tech-badge">CSS</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">Bootstrap</span>
+                  <span class="tech-badge">Responsive</span>
+                </div>
+                <p class="project-description">
+                  A modern, customizable portfolio template with dark/light
+                  theme toggle, smooth animations, and responsive design.
+                  Perfect for developers and designers to showcase their work
+                  professionally.
+                </p>
+                <div class="project-features">
+                  <span class="feature">Dark/Light Theme</span>
+                  <span class="feature">Responsive Design</span>
+                  <span class="feature">Smooth Animations</span>
+                </div>
+                <div class="project-links mt-3">
+                  <a href="#" class="btn btn-sm btn-outline">
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                  <a href="#" class="btn btn-sm btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>Tanzeel Ahmed</h5>
+            <p class="footer-about">
+              Software Engineering Student | Web Developer | Tech Enthusiast
+            </p>
+            <p>
+              Passionate about creating innovative solutions and exploring the
+              frontiers of technology.
+            </p>
+          </div>
+          <div class="col-lg-2 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="terms.html">Terms</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Connect With Me</h5>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/Tanzeel804"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/tanzeelahmedpov/"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/tanzeelahmedpov"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+            <p class="mt-3">Let's build something amazing together!</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2025 Tanzeel Ahmed. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-end">
+              <button class="back-to-top" id="backToTop">
+                <i class="fas fa-arrow-up"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // Typewriter Effect for Projects Page
+      class Typewriter {
+        constructor() {
+          this.texts = [
+            "Building Digital Experiences",
+            "Transforming Ideas into Reality",
+            "Crafting Innovative Solutions",
+            "Pushing Web Development Boundaries",
+          ];
+          this.speed = 100;
+          this.deleteSpeed = 50;
+          this.pauseTime = 2000;
+          this.currentTextIndex = 0;
+          this.currentCharIndex = 0;
+          this.isDeleting = false;
+          this.typewriterElement = document.getElementById("typewriter");
+          this.init();
+        }
+
+        type() {
+          const currentText = this.texts[this.currentTextIndex];
+
+          if (this.isDeleting) {
+            this.typewriterElement.textContent = currentText.substring(
+              0,
+              this.currentCharIndex - 1
+            );
+            this.currentCharIndex--;
+
+            if (this.currentCharIndex === 0) {
+              this.isDeleting = false;
+              this.currentTextIndex =
+                (this.currentTextIndex + 1) % this.texts.length;
+              setTimeout(() => this.type(), 500);
+            } else {
+              setTimeout(() => this.type(), this.deleteSpeed);
+            }
+          } else {
+            this.typewriterElement.textContent = currentText.substring(
+              0,
+              this.currentCharIndex + 1
+            );
+            this.currentCharIndex++;
+
+            if (this.currentCharIndex === currentText.length) {
+              this.isDeleting = true;
+              setTimeout(() => this.type(), this.pauseTime);
+            } else {
+              setTimeout(() => this.type(), this.speed);
+            }
+          }
+        }
+
+        init() {
+          if (this.typewriterElement) {
+            setTimeout(() => this.type(), 1000);
+          }
+        }
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Typewriter
+        new Typewriter();
+
+        // Initialize AOS
+        if (typeof AOS !== "undefined") {
+          AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: "ease-out-cubic",
+          });
+        }
+
+        // Back to top functionality
+        const backToTopBtn = document.getElementById("backToTop");
+        if (backToTopBtn) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 500) {
+              backToTopBtn.classList.add("show");
+            } else {
+              backToTopBtn.classList.remove("show");
+            }
+          });
+
+          backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
+        }
+
+        // Navbar scroll effect
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          });
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById("themeToggle");
+        if (themeToggle) {
+          const savedTheme = localStorage.getItem("theme-preference") || "dark";
+          document.documentElement.setAttribute("data-theme", savedTheme);
+          updateToggleIcon(savedTheme);
+
+          themeToggle.addEventListener("click", () => {
+            const currentTheme =
+              document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme-preference", newTheme);
+            updateToggleIcon(newTheme);
+
+            // Add rotation animation
+            themeToggle.style.transform = "rotate(180deg)";
+            setTimeout(() => {
+              themeToggle.style.transform = "rotate(0)";
+            }, 300);
+          });
+
+          function updateToggleIcon(theme) {
+            const icon = themeToggle.querySelector("i");
+            if (theme === "light") {
+              icon.className = "fas fa-sun";
+            } else {
+              icon.className = "fas fa-moon";
+            }
+          }
+        }
+
+        // Add hover effects to project cards
+        const projectCards = document.querySelectorAll(".project-card");
+        projectCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-10px)";
+            this.style.boxShadow = "0 15px 30px rgba(0,0,0,0.3)";
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+            this.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+          });
+        });
+
+        // Add click effects to tech badges
+        const techBadges = document.querySelectorAll(".tech-badge");
+        techBadges.forEach((badge) => {
+          badge.addEventListener("click", function () {
+            this.style.transform = "scale(1.2)";
+            setTimeout(() => {
+              this.style.transform = "scale(1)";
+            }, 300);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

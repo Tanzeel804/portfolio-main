@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzeel Ahmed - Software Engineer | Web Developer Portfolio</title>
+    <meta name="description" content="Tanzeel Ahmed - Software Engineering student at IUB. Passionate about web development, AI, and creating innovative technology solutions.">
+    <meta name="keywords" content="Tanzeel Ahmed, Software Engineer, Web Developer, IUB, Bahawalpur, Portfolio">
+    <meta name="author" content="Tanzeel Ahmed">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tanzeel Ahmed - Software Engineer | Web Developer Portfolio">
+    <meta property="og:description" content="Software Engineering student at IUB. Passionate about web development, AI, and creating innovative technology solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tanzeel804.github.io">
+    <meta property="og:image" content="images/profile.jpg">
+    <meta property="og:site_name" content="Tanzeel Ahmed Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tanzeel Ahmed - Software Engineer">
+    <meta name="twitter:description" content="Software Engineering student at IUB. Passionate about web development and AI.">
+    <meta name="twitter:image" content="images/profile.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tanzeel Ahmed",
+        "jobTitle": "Software Engineering Student",
+        "affiliation": {
+            "@type": "EducationalOrganization",
+            "name": "The Islamia University of Bahawalpur"
+        },
+        "url": "https://tanzeel804.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/tanzeel-ahmed-b21288397/",
+            "https://github.com/Tanzeel804",
+            "https://www.instagram.com/tanzeelahmedpov/",
+            "https://www.facebook.com/tanzeelahmedpov"
+        ]
+    }
+    </script>
+    
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Tanzeel Ahmed</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms.html">Terms</a>
+                    </li>
+                </ul>
+                <button class="btn btn-theme-toggle ms-3" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Tanzeel Ahmed</h1>
+                        <div class="typewriter-container">
+                            <span class="typewriter-text" id="typewriter"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <p class="hero-description">
+                            Software Engineering student at The Islamia University of Bahawalpur. 
+                            Passionate about creating innovative web solutions and exploring 
+                            the frontiers of artificial intelligence.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="projects.html" class="btn btn-primary me-3">View My Projects</a>
+                            <a href="contact.html" class="btn btn-outline">Connect With Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image">
+                        <div class="profile-image-container">
+                            <img src="images/profile.jpg" alt="Tanzeel Ahmed - Software Engineering Student" class="profile-image">
+                            <div class="image-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="section-padding" id="about-preview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate Developer & Continuous Learner</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="about-text">
+                        I'm a dedicated Software Engineering student at The Islamia University of Bahawalpur, 
+                        with a strong passion for technology and innovation. My journey in software development 
+                        began with curiosity about how digital solutions can transform lives and businesses.
+                    </p>
+                    <p class="about-text">
+                        I specialize in creating responsive, user-friendly web applications using modern 
+                        technologies. My approach combines technical expertise with creative problem-solving 
+                        to deliver solutions that not only meet but exceed expectations.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <p class="about-text">
+                        Beyond coding, I'm deeply interested in artificial intelligence and its potential 
+                        to revolutionize various industries. I believe in continuous learning and staying 
+                        updated with emerging technologies to build future-ready applications.
+                    </p>
+                    <p class="about-text">
+                        When I'm not programming, you can find me exploring new tech trends, contributing 
+                        to open-source projects, or sharing knowledge with fellow developers. I'm always 
+                        excited to collaborate on innovative projects that challenge my skills.
+                    </p>
+                    <div class="text-center mt-4">
+                        <a href="about.html" class="btn btn-primary">Learn More About Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section-padding bg-secondary" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">Continuously expanding my expertise</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="skill-item" data-aos="fade-right">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="skill-header">
+                            <span class="skill-name">Bootstrap</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-item" data-aos="fade-left">
+                        <div class="skill-header">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-left" data-aos-delay="100">
+                        <div class="skill-header">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-left" data-aos-delay="200">
+                        <div class="skill-header">
+                            <span class="skill-name">Responsive Design</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-left" data-aos-delay="300">
+                        <div class="skill-header">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section class="section-padding" id="featured-project">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="section-title">Featured Project</h2>
+                    <p class="section-subtitle">Check out my latest work</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="project-card featured" data-aos="zoom-in">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <div class="project-image">
+                                    <img src="images/project1.jpg" alt="E-commerce Website Project" class="img-fluid">
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="projects.html#ecommerce" class="btn btn-primary">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="project-content">
+                                    <h3 class="project-title">E-commerce Website</h3>
+                                    <div class="project-tech">
+                                        <span class="tech-badge">HTML</span>
+                                        <span class="tech-badge">CSS</span>
+                                        <span class="tech-badge">JavaScript</span>
+                                        <span class="tech-badge">Bootstrap 5</span>
+                                    </div>
+                                    <p class="project-description">
+                                        A modern, fully responsive e-commerce platform designed to provide 
+                                        seamless shopping experience across all devices. Features include 
+                                        product filtering, shopping cart functionality, and intuitive user interface.
+                                    </p>
+                                    <p class="project-description">
+                                        Built with mobile-first approach and optimized for performance, 
+                                        this project demonstrates advanced frontend development skills 
+                                        and attention to user experience details.
+                                    </p>
+                                    <div class="project-actions">
+                                        <a href="projects.html#ecommerce" class="btn btn-primary">View Project Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Tanzeel Ahmed</h5>
+                    <p class="footer-about">Software Engineering Student | Web Developer | Tech Enthusiast</p>
+                    <p>Passionate about creating innovative solutions and exploring the frontiers of technology.</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Connect With Me</h5>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tanzeel-ahmed-b21288397/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Tanzeel804" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tanzeelahmedpov/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/tanzeelahmedpov" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3">Let's build something amazing together!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Tanzeel Ahmed. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <button class="back-to-top" id="backToTop">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
