@@ -47,42 +47,73 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      /* Header Layout */
+      /* Enhanced Header Layout */
       .header-content {
         max-width: 100%;
       }
 
       .page-title {
         text-align: left;
-        font-size: 3.5rem;
-        font-weight: 700;
+        font-size: 4rem;
+        font-weight: 800;
         margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #ffffff, #e3f2fd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
       .typewriter-container {
         text-align: left;
-        font-size: 1.8rem;
-        font-weight: 500;
+        font-size: 2rem;
+        font-weight: 600;
         margin-bottom: 1rem;
         min-height: 2.5rem;
         color: var(--accent-light);
+        position: relative;
+      }
+
+      .typewriter-text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 3px solid var(--accent-light);
+        white-space: nowrap;
+        margin: 0;
+        letter-spacing: 0.05em;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--accent-light);
+        }
       }
 
       .page-subtitle {
         text-align: left;
         color: #e3f2fd;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         max-width: 600px;
         margin-bottom: 2rem;
+        line-height: 1.6;
       }
 
       [data-theme="light"] .page-subtitle {
         color: #4b5563;
-      }
-
-      /* Remove cursor blink */
-      .cursor {
-        display: none;
       }
 
       /* Enhanced Contact Cards */
@@ -92,10 +123,11 @@
         padding: 2.5rem;
         text-align: center;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 1px solid var(--border);
+        border: 2px solid transparent;
         height: 100%;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
       }
 
       .contact-method-card::before {
@@ -108,7 +140,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(255, 255, 255, 0.1),
+          rgba(255, 107, 107, 0.1),
           transparent
         );
         transition: left 0.6s ease;
@@ -119,23 +151,38 @@
       }
 
       .contact-method-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px var(--shadow);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
         border-color: var(--accent);
+        background: var(--gradient-primary);
+      }
+
+      .contact-method-card:hover .contact-icon-enhanced {
+        color: white;
+        -webkit-text-fill-color: white;
+        transform: scale(1.3) rotate(10deg);
+      }
+
+      .contact-method-card:hover h4,
+      .contact-method-card:hover p {
+        color: white;
+      }
+
+      .contact-method-card:hover .btn-outline {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-color: white;
       }
 
       .contact-icon-enhanced {
-        font-size: 3.5rem;
+        font-size: 4rem;
         margin-bottom: 1.5rem;
         background: var(--gradient-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        transition: all 0.3s ease;
-      }
-
-      .contact-method-card:hover .contact-icon-enhanced {
-        transform: scale(1.2) rotate(5deg);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: inline-block;
       }
 
       /* Enhanced Form */
@@ -143,10 +190,11 @@
         background: var(--gradient-card);
         padding: 3rem;
         border-radius: 1.5rem;
-        box-shadow: 0 15px 40px var(--shadow);
-        border: 1px solid var(--border);
+        box-shadow: 0 20px 50px var(--shadow);
+        border: 2px solid var(--border);
         position: relative;
         overflow: hidden;
+        transition: all 0.3s ease;
       }
 
       .contact-form-container::before {
@@ -159,7 +207,7 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(255, 107, 107, 0.05),
+          rgba(255, 107, 107, 0.08),
           transparent
         );
         transition: left 0.8s ease;
@@ -169,52 +217,184 @@
         left: 100%;
       }
 
+      .contact-form-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 60px var(--shadow);
+      }
+
       .form-control {
         transition: all 0.3s ease;
         border: 2px solid var(--border);
+        background: var(--bg-primary);
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
       }
 
       .form-control:focus {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        border-color: var(--accent);
+        background: var(--gradient-card);
       }
 
-      /* Floating Animation for Contact Cards */
-      @keyframes float {
+      /* Enhanced Floating Animation */
+      @keyframes enhanced-float {
         0%,
         100% {
-          transform: translateY(0px);
+          transform: translateY(0px) rotate(0deg);
         }
-        50% {
-          transform: translateY(-10px);
+        33% {
+          transform: translateY(-15px) rotate(1deg);
+        }
+        66% {
+          transform: translateY(-8px) rotate(-1deg);
         }
       }
 
-      .floating {
-        animation: float 3s ease-in-out infinite;
+      .enhanced-float {
+        animation: enhanced-float 4s ease-in-out infinite;
       }
 
-      .floating-delay-1 {
-        animation-delay: 0.5s;
+      .float-delay-1 {
+        animation-delay: 0.7s;
       }
 
-      .floating-delay-2 {
-        animation-delay: 1s;
+      .float-delay-2 {
+        animation-delay: 1.4s;
       }
 
-      /* Pulse Animation for Icons */
-      @keyframes pulse-glow {
+      /* Enhanced Pulse Animation */
+      @keyframes enhanced-pulse {
         0%,
         100% {
-          box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+          transform: scale(1);
+          box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
         }
         50% {
-          box-shadow: 0 0 30px rgba(255, 107, 107, 0.6);
+          transform: scale(1.1);
+          box-shadow: 0 0 40px rgba(255, 107, 107, 0.8);
         }
       }
 
-      .pulse-glow {
-        animation: pulse-glow 2s ease-in-out infinite;
+      .enhanced-pulse {
+        animation: enhanced-pulse 3s ease-in-out infinite;
+      }
+
+      /* Scroll Progress Indicator */
+      .scroll-progress {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: var(--gradient-primary);
+        z-index: 999;
+        transition: width 0.1s ease;
+        box-shadow: 0 2px 10px rgba(255, 107, 107, 0.5);
+      }
+
+      /* Enhanced Social Links */
+      .social-link-large {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: var(--gradient-card);
+        border-radius: 1rem;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-link-large::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-primary);
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .social-link-large:hover::before {
+        left: 0;
+      }
+
+      .social-link-large:hover {
+        color: white;
+        transform: translateX(10px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        border-color: transparent;
+      }
+
+      .social-link-large i {
+        font-size: 1.5rem;
+        width: 2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .social-link-large:hover i {
+        transform: scale(1.2) rotate(10deg);
+      }
+
+      /* Enhanced Info Cards */
+      .info-card {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--gradient-card);
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .info-card:hover {
+        transform: translateX(8px) scale(1.02);
+        box-shadow: 0 10px 30px var(--shadow);
+        border-color: var(--accent);
+        background: var(--gradient-primary);
+      }
+
+      .info-card:hover .info-icon,
+      .info-card:hover h5,
+      .info-card:hover p {
+        color: white;
+        -webkit-text-fill-color: white;
+      }
+
+      .info-card:hover .btn-outline {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-color: white;
+      }
+
+      .info-icon {
+        font-size: 2.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+      }
+
+      /* Enhanced Success Modal */
+      .success-icon {
+        font-size: 5rem;
+        background: var(--gradient-success);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        animation: enhanced-pulse 2s ease-in-out infinite;
       }
 
       /* Responsive Design */
@@ -225,26 +405,92 @@
 
         .page-title {
           text-align: center !important;
-          font-size: 2.5rem !important;
+          font-size: 2.8rem !important;
         }
 
         .typewriter-container {
           text-align: center !important;
-          font-size: 1.5rem !important;
+          font-size: 1.6rem !important;
         }
 
         .page-subtitle {
           text-align: center !important;
           margin: 0 auto !important;
+          font-size: 1.1rem !important;
         }
 
         .contact-form-container {
           padding: 2rem;
         }
+
+        .contact-method-card {
+          padding: 2rem;
+        }
+
+        .contact-icon-enhanced {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-title {
+          font-size: 2.2rem !important;
+        }
+
+        .typewriter-container {
+          font-size: 1.3rem !important;
+        }
+
+        .contact-form-container {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Additional Enhancements */
+      .contact-intro h2 {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+
+      .btn-primary {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
       }
     </style>
   </head>
   <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -297,16 +543,13 @@
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <span
-                  class="typewriter-text"
-                  id="typewriter"
-                  data-words='["Build Amazing Projects", "Collaborate & Innovate", "Discuss Technology", "Create Solutions", "Transform Ideas"]'
-                  data-wait="2000"
-                ></span>
-                <span class="cursor">|</span>
+                <span class="typewriter-text"
+                  >Build Amazing Projects Together</span
+                >
               </div>
               <p class="page-subtitle" data-aos="fade-up" data-aos-delay="400">
-                Get in Touch for Collaborations & Opportunities
+                Ready to bring your ideas to life? Let's collaborate on
+                innovative projects and create something extraordinary.
               </p>
             </div>
           </div>
@@ -314,27 +557,27 @@
       </div>
     </section>
 
-    <!-- Contact Information - Moved Above Form -->
+    <!-- Contact Information -->
     <section class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-            <h2 class="section-title">Ways to Connect</h2>
+            <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">
-              Choose your preferred method of communication
+              Choose your preferred way to connect with me
             </p>
           </div>
         </div>
         <div class="row mt-4">
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-            <div class="contact-method-card floating">
-              <div class="contact-icon-enhanced pulse-glow">
+            <div class="contact-method-card enhanced-float">
+              <div class="contact-icon-enhanced enhanced-pulse">
                 <i class="fas fa-envelope"></i>
               </div>
               <h4>Email Me</h4>
               <p>For detailed discussions and project inquiries</p>
               <a
-                href="mailto:tanzeel.ahmed@example.com"
+                href="mailto:tanzeel.ahmed.se@gmail.com"
                 class="btn btn-outline mt-3"
               >
                 <i class="fas fa-paper-plane me-2"></i>Send Email
@@ -346,8 +589,8 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="contact-method-card floating floating-delay-1">
-              <div class="contact-icon-enhanced pulse-glow">
+            <div class="contact-method-card enhanced-float float-delay-1">
+              <div class="contact-icon-enhanced enhanced-pulse">
                 <i class="fab fa-whatsapp"></i>
               </div>
               <h4>WhatsApp</h4>
@@ -357,7 +600,7 @@
                 target="_blank"
                 class="btn btn-outline mt-3"
               >
-                <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                <i class="fab fa-whatsapp me-2"></i>Start Chat
               </a>
             </div>
           </div>
@@ -366,8 +609,8 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="contact-method-card floating floating-delay-2">
-              <div class="contact-icon-enhanced pulse-glow">
+            <div class="contact-method-card enhanced-float float-delay-2">
+              <div class="contact-icon-enhanced enhanced-pulse">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
               <h4>Location</h4>
@@ -390,8 +633,8 @@
             <div class="contact-intro text-center mb-5" data-aos="fade-up">
               <h2>Send Me a Message</h2>
               <p>
-                Prefer to write? Fill out the form below and I'll get back to
-                you as soon as possible.
+                Have a project in mind? Fill out the form below and I'll get
+                back to you within 24 hours.
               </p>
             </div>
           </div>
@@ -463,7 +706,7 @@
                 <div class="form-actions text-center">
                   <button
                     type="submit"
-                    class="btn btn-primary btn-lg"
+                    class="btn btn-primary btn-lg px-5"
                     id="submitBtn"
                   >
                     <span class="btn-text">
@@ -754,69 +997,61 @@
         offset: 100,
       });
 
-      // Typewriter Effect
-      class TypeWriter {
-        constructor(txtElement, words, wait = 3000) {
-          this.txtElement = txtElement;
-          this.words = words;
-          this.txt = "";
-          this.wordIndex = 0;
-          this.wait = parseInt(wait, 10);
-          this.type();
-          this.isDeleting = false;
+      // Scroll Progress Indicator
+      window.addEventListener("scroll", function () {
+        const winHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+        const scrollProgress = document.getElementById("scrollProgress");
+        if (scrollProgress) {
+          scrollProgress.style.width = scrollPercent + "%";
         }
+      });
 
-        type() {
-          // Current index of word
-          const current = this.wordIndex % this.words.length;
-          // Get full text of current word
-          const fullTxt = this.words[current];
-
-          // Check if deleting
-          if (this.isDeleting) {
-            // Remove char
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-          } else {
-            // Add char
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-          }
-
-          // Insert txt into element
-          this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-
-          // Initial Type Speed
-          let typeSpeed = 100;
-
-          if (this.isDeleting) {
-            typeSpeed /= 2;
-          }
-
-          // If word is complete
-          if (!this.isDeleting && this.txt === fullTxt) {
-            // Make pause at end
-            typeSpeed = this.wait;
-            // Set delete to true
-            this.isDeleting = true;
-          } else if (this.isDeleting && this.txt === "") {
-            this.isDeleting = false;
-            // Move to next word
-            this.wordIndex++;
-            // Pause before start typing
-            typeSpeed = 500;
-          }
-
-          setTimeout(() => this.type(), typeSpeed);
-        }
-      }
-
-      // Initialize when DOM is loaded
+      // Enhanced Form Handling
       document.addEventListener("DOMContentLoaded", function () {
-        const txtElement = document.getElementById("typewriter");
-        if (txtElement) {
-          const words = JSON.parse(txtElement.getAttribute("data-words"));
-          const wait = txtElement.getAttribute("data-wait");
-          new TypeWriter(txtElement, words, wait);
+        const contactForm = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Show loading state
+            const btnText = submitBtn.querySelector(".btn-text");
+            const btnLoading = submitBtn.querySelector(".btn-loading");
+
+            btnText.classList.add("d-none");
+            btnLoading.classList.remove("d-none");
+
+            // Simulate form submission
+            setTimeout(() => {
+              // Show success modal
+              const successModal = new bootstrap.Modal(
+                document.getElementById("successModal")
+              );
+              successModal.show();
+
+              // Reset form and button
+              contactForm.reset();
+              btnText.classList.remove("d-none");
+              btnLoading.classList.add("d-none");
+            }, 2000);
+          });
         }
+      });
+
+      // Enhanced hover effects for contact cards
+      document.querySelectorAll(".contact-method-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-12px) scale(1.02)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "";
+        });
       });
     </script>
     <script src="js/main.js"></script>
