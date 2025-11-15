@@ -80,11 +80,13 @@
         }
       }
 
+      /* Enhanced Project Card Styles */
       .project-card {
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         border: 2px solid transparent;
         position: relative;
         overflow: hidden;
+        background: var(--bg-card);
       }
 
       .project-card::before {
@@ -97,10 +99,11 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(59, 130, 246, 0.1),
+          rgba(59, 130, 246, 0.2),
           transparent
         );
-        transition: left 0.5s ease;
+        transition: left 0.6s ease;
+        z-index: 1;
       }
 
       .project-card:hover::before {
@@ -108,41 +111,123 @@
       }
 
       .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px var(--shadow);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         border-color: var(--accent);
+        background: linear-gradient(
+          135deg,
+          var(--bg-card),
+          var(--bg-secondary)
+        );
       }
 
+      /* Enhanced Tech Badges */
       .tech-badge {
         transition: all 0.3s ease;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid transparent;
+      }
+
+      .tech-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .tech-badge:hover::before {
+        left: 100%;
       }
 
       .tech-badge:hover {
-        transform: scale(1.1);
-        background: var(--accent-hover) !important;
+        transform: translateY(-3px) scale(1.1);
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent-hover)
+        ) !important;
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        border-color: var(--accent-light);
+        color: white !important;
       }
 
+      .tech-badge:active {
+        transform: translateY(0) scale(1.05);
+        transition: all 0.1s ease;
+      }
+
+      /* Enhanced Enhancement Items */
       .enhancement-item {
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+      }
+
+      .enhancement-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .enhancement-item:hover::before {
+        left: 100%;
       }
 
       .enhancement-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px var(--shadow);
-        background: var(--accent-light);
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+        background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+        border-color: var(--accent-light);
         color: white;
       }
 
       .enhancement-item:hover .enhancement-icon {
+        color: white !important;
+        transform: scale(1.2) rotate(5deg);
+      }
+
+      .enhancement-item:hover h5 {
         color: white;
       }
 
+      .enhancement-item:hover p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .enhancement-icon {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: var(--accent);
+      }
+
+      /* Enhanced Project Links */
       .project-links .btn {
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
         overflow: hidden;
+        border: 2px solid transparent;
       }
 
       .project-links .btn::before {
@@ -155,10 +240,10 @@
         background: linear-gradient(
           90deg,
           transparent,
-          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.3),
           transparent
         );
-        transition: left 0.5s ease;
+        transition: left 0.6s ease;
       }
 
       .project-links .btn:hover::before {
@@ -166,8 +251,59 @@
       }
 
       .project-links .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px var(--shadow);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+        border-color: var(--accent-light);
+      }
+
+      /* Skill Progress Animation */
+      .skill-progress {
+        transition: all 0.8s ease-in-out;
+      }
+
+      .skill-progress:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      /* Feature List Enhancements */
+      .feature-list li {
+        transition: all 0.3s ease;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .feature-list li:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateX(5px);
+        color: var(--accent);
+      }
+
+      .feature-list li:hover i {
+        color: var(--accent);
+        transform: scale(1.2);
+      }
+
+      .feature-list i {
+        transition: all 0.3s ease;
+      }
+
+      /* Technology Stack Section Enhancement */
+      .tech-stack-section {
+        background: linear-gradient(
+          135deg,
+          var(--bg-secondary),
+          var(--bg-card)
+        );
+        border-radius: 1rem;
+        padding: 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .tech-stack-section:hover {
+        border-color: var(--accent);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
       }
     </style>
   </head>
@@ -281,16 +417,144 @@
                   performance for better user experience and conversion rates.
                 </p>
 
-                <div class="project-tech mt-4">
+                <div class="project-tech mt-4 tech-stack-section">
                   <h4>Technology Stack</h4>
-                  <div class="tech-tags">
-                    <span class="tech-badge">HTML5</span>
-                    <span class="tech-badge">CSS3</span>
-                    <span class="tech-badge">JavaScript ES6+</span>
-                    <span class="tech-badge">Bootstrap 5</span>
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">Prompt Engineering</span>
-                    <span class="tech-badge">Git</span>
+                  <div class="tech-tags mt-3">
+                    <span
+                      class="tech-badge"
+                      style="background: #e34f26; color: white"
+                      >HTML5</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #1572b6; color: white"
+                      >CSS3</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #f7df1e; color: black"
+                      >JavaScript</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #7952b3; color: white"
+                      >Bootstrap 5</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #3776ab; color: white"
+                      >Python</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #ff6b35; color: white"
+                      >Prompt Engineering</span
+                    >
+                    <span
+                      class="tech-badge"
+                      style="background: #f05032; color: white"
+                      >Git</span
+                    >
+                  </div>
+                  <div class="skills-showcase mt-4">
+                    <h5>Key Skills Demonstrated:</h5>
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <div class="skill-item">
+                          <div class="skill-header">
+                            <span class="skill-name">Frontend Development</span>
+                            <span class="skill-percentage">90%</span>
+                          </div>
+                          <div
+                            class="progress skill-progress"
+                            style="height: 8px"
+                          >
+                            <div
+                              class="progress-bar"
+                              data-width="90"
+                              style="
+                                width: 0%;
+                                background: linear-gradient(
+                                  90deg,
+                                  #3b82f6,
+                                  #60a5fa
+                                );
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="skill-item mt-3">
+                          <div class="skill-header">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percentage">85%</span>
+                          </div>
+                          <div
+                            class="progress skill-progress"
+                            style="height: 8px"
+                          >
+                            <div
+                              class="progress-bar"
+                              data-width="85"
+                              style="
+                                width: 0%;
+                                background: linear-gradient(
+                                  90deg,
+                                  #10b981,
+                                  #34d399
+                                );
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="skill-item">
+                          <div class="skill-header">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percentage">88%</span>
+                          </div>
+                          <div
+                            class="progress skill-progress"
+                            style="height: 8px"
+                          >
+                            <div
+                              class="progress-bar"
+                              data-width="88"
+                              style="
+                                width: 0%;
+                                background: linear-gradient(
+                                  90deg,
+                                  #f59e0b,
+                                  #fbbf24
+                                );
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="skill-item mt-3">
+                          <div class="skill-header">
+                            <span class="skill-name">API Integration</span>
+                            <span class="skill-percentage">82%</span>
+                          </div>
+                          <div
+                            class="progress skill-progress"
+                            style="width: 0%; height: 8px"
+                          >
+                            <div
+                              class="progress-bar"
+                              data-width="82"
+                              style="
+                                background: linear-gradient(
+                                  90deg,
+                                  #ef4444,
+                                  #f87171
+                                );
+                              "
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -304,19 +568,19 @@
                 <div class="col-md-6">
                   <ul class="feature-list">
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-search"></i>
                       <span>Advanced product filtering and search</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-shopping-cart"></i>
                       <span>Real-time shopping cart updates</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-user-shield"></i>
                       <span>User authentication and profile management</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-expand"></i>
                       <span>Responsive product galleries with zoom</span>
                     </li>
                   </ul>
@@ -324,19 +588,19 @@
                 <div class="col-md-6">
                   <ul class="feature-list">
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-credit-card"></i>
                       <span>Secure checkout process</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-clipboard-list"></i>
                       <span>Order tracking and history</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-tachometer-alt"></i>
                       <span>Admin dashboard for inventory</span>
                     </li>
                     <li>
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-bolt"></i>
                       <span>Performance optimized loading</span>
                     </li>
                   </ul>
@@ -348,7 +612,7 @@
           <div class="row mt-5">
             <div class="col-lg-12" data-aos="fade-up">
               <h3>Future Enhancements</h3>
-              <p>
+              <p class="mb-4">
                 This project serves as a foundation for continued development
                 and enhancement. Future updates will focus on adding advanced
                 functionality and integrating with backend services to create a
@@ -357,47 +621,61 @@
               <div class="enhancement-grid">
                 <div class="enhancement-item">
                   <div class="enhancement-icon">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i class="fas fa-tachometer-alt fa-2x"></i>
                   </div>
                   <h5>Admin Dashboard</h5>
-                  <p>Advanced inventory management system with analytics</p>
-                </div>
-                <div class="enhancement-item">
-                  <div class="enhancement-icon">
-                    <i class="fas fa-credit-card"></i>
-                  </div>
-                  <h5>Payment Integration</h5>
-                  <p>Multiple payment gateways including Stripe and PayPal</p>
-                </div>
-                <div class="enhancement-item">
-                  <div class="enhancement-icon">
-                    <i class="fas fa-user-shield"></i>
-                  </div>
-                  <h5>User Authorization</h5>
                   <p>
-                    Role-based access control and advanced security features
+                    Advanced inventory management system with analytics and
+                    reporting features
                   </p>
                 </div>
                 <div class="enhancement-item">
                   <div class="enhancement-icon">
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-credit-card fa-2x"></i>
+                  </div>
+                  <h5>Payment Integration</h5>
+                  <p>
+                    Multiple payment gateways including Stripe, PayPal, and
+                    local payment methods
+                  </p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-user-shield fa-2x"></i>
+                  </div>
+                  <h5>User Authorization</h5>
+                  <p>
+                    Role-based access control and advanced security features
+                    with 2FA
+                  </p>
+                </div>
+                <div class="enhancement-item">
+                  <div class="enhancement-icon">
+                    <i class="fas fa-star fa-2x"></i>
                   </div>
                   <h5>Review System</h5>
-                  <p>Advanced rating and review system with moderation</p>
+                  <p>
+                    Advanced rating and review system with AI-powered moderation
+                  </p>
                 </div>
                 <div class="enhancement-item">
                   <div class="enhancement-icon">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-robot fa-2x"></i>
                   </div>
                   <h5>AI Recommendations</h5>
-                  <p>Machine learning based product recommendations</p>
+                  <p>
+                    Machine learning based personalized product recommendations
+                  </p>
                 </div>
                 <div class="enhancement-item">
                   <div class="enhancement-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-mobile-alt fa-2x"></i>
                   </div>
                   <h5>Mobile App</h5>
-                  <p>Native mobile application for iOS and Android</p>
+                  <p>
+                    Native mobile application for iOS and Android with push
+                    notifications
+                  </p>
                 </div>
               </div>
             </div>
@@ -462,11 +740,31 @@
               <div class="project-content">
                 <h3 class="project-title">AI E-commerce Store</h3>
                 <div class="project-tech">
-                  <span class="tech-badge">HTML</span>
-                  <span class="tech-badge">CSS</span>
-                  <span class="tech-badge">JavaScript</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">AI Integration</span>
+                  <span
+                    class="tech-badge"
+                    style="background: #e34f26; color: white"
+                    >HTML5</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #1572b6; color: white"
+                    >CSS3</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #f7df1e; color: black"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #3776ab; color: white"
+                    >Python</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #ff6b35; color: white"
+                    >AI Integration</span
+                  >
                 </div>
                 <p class="project-description">
                   An intelligent e-commerce platform featuring AI-powered
@@ -526,11 +824,31 @@
               <div class="project-content">
                 <h3 class="project-title">E-commerce Website v2</h3>
                 <div class="project-tech">
-                  <span class="tech-badge">JavaScript</span>
-                  <span class="tech-badge">CSS3</span>
-                  <span class="tech-badge">HTML5</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Python</span>
+                  <span
+                    class="tech-badge"
+                    style="background: #f7df1e; color: black"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #1572b6; color: white"
+                    >CSS3</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #e34f26; color: white"
+                    >HTML5</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #7952b3; color: white"
+                    >Bootstrap</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #3776ab; color: white"
+                    >Python</span
+                  >
                 </div>
                 <p class="project-description">
                   Enhanced e-commerce website with improved user interface,
@@ -585,11 +903,31 @@
               <div class="project-content">
                 <h3 class="project-title">Portfolio Template</h3>
                 <div class="project-tech">
-                  <span class="tech-badge">HTML</span>
-                  <span class="tech-badge">CSS</span>
-                  <span class="tech-badge">JavaScript</span>
-                  <span class="tech-badge">Bootstrap</span>
-                  <span class="tech-badge">Responsive</span>
+                  <span
+                    class="tech-badge"
+                    style="background: #e34f26; color: white"
+                    >HTML</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #1572b6; color: white"
+                    >CSS</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #f7df1e; color: black"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #7952b3; color: white"
+                    >Bootstrap</span
+                  >
+                  <span
+                    class="tech-badge"
+                    style="background: #61dbfb; color: black"
+                    >React</span
+                  >
                 </div>
                 <p class="project-description">
                   A modern, customizable portfolio template with dark/light
@@ -756,6 +1094,85 @@
         }
       }
 
+      // Enhanced Hover Effects and Animations
+      function initializeEnhancedEffects() {
+        // Progress bar animation
+        const progressBars = document.querySelectorAll(".progress-bar");
+        progressBars.forEach((bar) => {
+          const width = bar.getAttribute("data-width");
+          setTimeout(() => {
+            bar.style.width = width + "%";
+          }, 500);
+        });
+
+        // Enhanced tech badge effects
+        const techBadges = document.querySelectorAll(".tech-badge");
+        techBadges.forEach((badge) => {
+          badge.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-3px) scale(1.1)";
+            this.style.boxShadow = "0 8px 20px rgba(59, 130, 246, 0.4)";
+          });
+
+          badge.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+            this.style.boxShadow = "none";
+          });
+
+          badge.addEventListener("click", function () {
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "scale(1.1)";
+            }, 150);
+          });
+        });
+
+        // Enhanced enhancement item effects
+        const enhancementItems = document.querySelectorAll(".enhancement-item");
+        enhancementItems.forEach((item) => {
+          const icon = item.querySelector(".enhancement-icon");
+
+          item.addEventListener("mouseenter", function () {
+            icon.style.transform = "scale(1.3) rotate(8deg)";
+            icon.style.color = "#ffffff";
+          });
+
+          item.addEventListener("mouseleave", function () {
+            icon.style.transform = "scale(1) rotate(0)";
+            icon.style.color = "";
+          });
+        });
+
+        // Project card enhanced effects
+        const projectCards = document.querySelectorAll(".project-card");
+        projectCards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-12px) scale(1.02)";
+            this.style.boxShadow = "0 25px 50px rgba(59, 130, 246, 0.3)";
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+            this.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+          });
+        });
+
+        // Feature list item effects
+        const featureItems = document.querySelectorAll(".feature-list li");
+        featureItems.forEach((item) => {
+          const icon = item.querySelector("i");
+
+          item.addEventListener("mouseenter", function () {
+            icon.style.transform = "scale(1.3)";
+            icon.style.color = "#3b82f6";
+          });
+
+          item.addEventListener("mouseleave", function () {
+            icon.style.transform = "scale(1)";
+            icon.style.color = "";
+          });
+        });
+      }
+
       // Initialize when DOM is loaded
       document.addEventListener("DOMContentLoaded", function () {
         // Initialize Typewriter
@@ -770,6 +1187,9 @@
             easing: "ease-out-cubic",
           });
         }
+
+        // Initialize enhanced effects
+        initializeEnhancedEffects();
 
         // Back to top functionality
         const backToTopBtn = document.getElementById("backToTop");
@@ -833,31 +1253,6 @@
             }
           }
         }
-
-        // Add hover effects to project cards
-        const projectCards = document.querySelectorAll(".project-card");
-        projectCards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-10px)";
-            this.style.boxShadow = "0 15px 30px rgba(0,0,0,0.3)";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0)";
-            this.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-          });
-        });
-
-        // Add click effects to tech badges
-        const techBadges = document.querySelectorAll(".tech-badge");
-        techBadges.forEach((badge) => {
-          badge.addEventListener("click", function () {
-            this.style.transform = "scale(1.2)";
-            setTimeout(() => {
-              this.style.transform = "scale(1)";
-            }, 300);
-          });
-        });
       });
     </script>
   </body>
